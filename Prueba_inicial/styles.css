@@ -1,0 +1,142 @@
+body{
+    background-color: rgb(252, 210, 132);
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: rgb(255, 123, 0);
+    color: rgb(255, 196, 0);
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+nav ul li{
+    display: inline;
+    padding-right: 25px;
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 196, 0);
+    width: 100%;
+    margin: 0 auto;
+    height: 50px;
+}
+
+nav a{
+    text-decoration: none;
+    color: rgb(255, 123, 0);
+}
+
+footer{
+    background-color: rgb(255, 123, 0);
+    color: rgb(255, 208, 0);
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+main{
+    width: 100%;
+    display: grid;
+    grid-template-areas: 'inic inic inic cult'
+                         'arte arte monu monu'
+                         'cont cont vid vid';
+}
+
+main section{
+    background-color: rgb(255, 196, 0);
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+main section h2{
+    color:rgb(255, 123, 0);
+    border-bottom: 2px solid rgb(255, 123, 0);
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+main section p{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+#inicio{
+    grid-area: inic;
+}
+
+#inicio img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+#cultura{
+    grid-area: cult;
+}
+
+#cultura img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+#cultura blockquote{
+    text-align: center;
+    color: rgb(255, 102, 0);
+    font-style: italic;
+}
+
+#arte{
+    grid-area: arte;
+}
+
+#arte img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+#monumentos{
+    grid-area: monu;
+}
+
+#monumentos img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+#monumentos table{
+    border-radius: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+    border: 2px solid white;
+    text-align: center;
+}
+
+#monumentos table thead{
+    background-color: rgb(255, 102, 0);
+    color: rgb(255, 208, 0);
+}
+
+
+#contactar{
+    grid-area: cont;
+}
+
+#video{
+    grid-area: vid;
+}
+
+#video video{
+    width: 100%;
+}
+
+
+
