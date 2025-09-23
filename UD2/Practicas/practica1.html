@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1</title>
+</head>
+<body>
+
+    <script>
+
+        /*
+        document.write("Soy el primer Script");
+        document.write("<br>Soy el segundo Script");
+
+        let primera = parseInt(prompt("Introduce el primer número"));
+        let segunda = parseInt(prompt("Introduce el segundo número"));
+
+        document.write("<br>La suma de " + primera + " + " + segunda + " es: " + (primera+segunda));
+        document.write("<br>El producto de " + primera + " * " + segunda + " es: " + (primera*segunda));
+        document.write("<br>La diferencia de " + primera + " - " + segunda + " es: " + (primera-segunda));
+        document.write("<br>La división de " + primera + " entre " + segunda + " es: " + (primera/segunda));
+        document.write("<br>El resto de la división de " + primera + " entre " + segunda + " es: " + (primera%segunda));
+        
+
+        let cadena1 = prompt("Escribe una cadena");
+        let cadena2 = prompt("Escribe otra cadena");
+
+        let cadena3 = cadena1+cadena2;
+        cadena1 += cadena2;
+
+        document.write("<br>" + cadena3);
+        document.write("<br>" + cadena1);
+        
+
+        /////////////////BUCLES
+
+
+        //2.6
+        let num = prompt("Introduce un número:");
+        if(num%2===0){
+            alert("Es un número par");
+        } else
+            alert("Es un número impar");
+
+        //2.7
+        let numero1 = parseInt(prompt("Introduce un número:"));
+        let numero2 = parseInt(prompt("Introduce otro número:"));
+        
+        if((numero1+numero2) > (numero1*numero2)){2
+            document.write("La suma es mayor que el producto.");
+        } else{
+            document.write("El producto es mayor que la suma")
+        }
+        
+        
+        //2.8
+        let num1 = parseInt(prompt("Introduce un número:"));
+        let num2 = parseInt(prompt("Introduce otro número:"));
+
+        if((num1>0) && (num2>num1)){
+            document.write("Juan Antonio");
+        } else{
+            if(num1>0 && num2>=num1){
+                document.write("Solis Cortez");
+            } else{
+                if(num1<0){
+                    document.write("Juan Antonio Solis Cortez");
+                }
+            }
+        }
+        
+        //2.9
+        let pedido = parseInt(prompt("Introduce un número:"));
+        for(let i = 1;i<= pedido;i++){
+            document.write(i + ", ");
+        }
+        
+        //2.10
+        let tabla = parseInt(prompt("Escribe un numero para sacar su tabla:"));
+        for(let i=1;i<=10;i++){
+            document.write(tabla + " x " + i + " = " + tabla*i + "<br>");
+        }
+
+        //2.11
+        let desc = parseInt(prompt("Escribe un número altillo"));
+        for(let i = desc;i>=0;i-=2){
+            document.write(i + "<br>");
+        }
+        
+
+        //2.12
+        let piramide = parseInt(prompt("Escribe un altura de pirámide:"));
+        for(let i=1;i<=piramide;i++){
+            for(let j=1;j<=i;j++){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+        */
+
+        //2.13
+        let divisor = parseInt(prompt("Dame un número:"));
+        document.write("Sus divisores son: ")
+        for(let i=1;i<=divisor;i++){
+            
+            if(divisor%i===0){
+                document.write(i + " ");
+            }
+        }
+
+
+
+
+        
+
+
+        
+
+        
+        
+    </script>
+    
+</body>
+</html>

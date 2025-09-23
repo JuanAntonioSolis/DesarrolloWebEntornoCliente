@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1er Ejemplo JavaScript</title>
+</head>
+
+<body>
+
+    <p id="parrafo">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex cupiditate quasi quia ratione
+        doloribus, id quae aliquam eveniet aut? Dolorem quas necessitatibus quasi error aut, molestiae facilis omnis
+        architecto? Reiciendis!</p>
+
+
+    <script>
+        //Alerta en pantalla
+        alert("Hola mundo!");
+
+        //Lo escribe en el documento HTML
+        document.write("Hello World!");
+
+        //Alerta por consola
+        console.log("Hola consola!");
+
+
+        //prompt para leer por teclado
+        //let declara variable 
+        let nombre = prompt("Dime tu nombre:");
+        alert("Tu nombre es: " + nombre);
+        document.write("<h1>Bienvenido " + nombre + "</h1>");
+
+        //parseInt para transformar en int una variable, puede ponerse en prompt
+        let num1 = prompt("Introduce un número");
+        let num2 = prompt("Introduce otro número");
+        document.write("<br> La suma de esos dos números es: " + (parseInt(num1) + parseInt(num2)));
+
+        //Arrays
+
+        let numeros = [5, 4, 3, 2, 1];
+        document.write("<br> El array: " + numeros);
+        document.write("<br> El último valor del array es: " + numeros[numeros.length - 1]);
+        for (let i = 0; i < numeros.length; i++) {
+            document.write("<br> El número en la posición " + i + " es " + numeros[i]);
+        };
+
+        //Cambiar valor por id en HTML
+        let texto = prompt("Escribe un párrafo personalizado");
+        document.getElementById("parrafo").innerHTML=texto;
+    </script>
+
+    
+
+</body>
+
+</html>
