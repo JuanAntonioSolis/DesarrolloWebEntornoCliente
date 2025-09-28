@@ -97,7 +97,7 @@
             }
             document.write("<br>");
         }
-        */
+        
 
         //2.13
         let divisor = parseInt(prompt("Dame un número:"));
@@ -108,6 +108,89 @@
                 document.write(i + " ");
             }
         }
+
+        
+
+        //2.14
+        let primo = parseInt(prompt("Escríbeme un número:"));
+        for(let i=2;i < primo / 2;i++){
+            if(primo % i === 0){
+                document.write("No es un número primo");
+                break;
+            } else {
+                document.write("Es un número primo");
+                break;
+            }
+        }
+        
+
+
+        //2.16
+        /*
+        let number = parseInt(prompt("Give me a number:"));
+        let aux = 1;
+        while (aux <= number){
+            document.write(aux + ",");
+            aux++;
+        }
+        
+
+        //2.17
+        let number = parseInt(prompt("Give me a number:"));
+        let aux = 1;
+        while (aux <= 10){
+            document.write(number + " x " + aux + " = " + (aux*number) + "<br>");
+            aux++;
+        }
+        
+
+
+        //2.18
+        let number = parseInt(prompt("Give me a number:"));
+        while (number >= 0){
+            document.write(number + ",");
+            number-=2;
+        }
+         
+
+        //2.20
+        let number = parseInt(prompt("Give me a number:"));
+        aux = 1;
+        document.write("Sus divisores son: ");
+        while (aux <= number){
+            if(number % aux === 0){
+                document.write(aux + ",");
+            }
+            aux++;
+            
+        }
+               */
+
+
+        //2.21
+        let primo = parseInt(prompt("Dime un numerin:"));
+        aux = 2;
+        while (aux <= primo){
+            if(primo % aux != 0){
+                document.write("Es un número primo");
+                break;
+            } else{
+                document.write("No es un número primo");
+                break;
+            }
+            aux++;
+            
+        }
+
+
+
+
+
+        
+        
+
+
+
 
 
 
