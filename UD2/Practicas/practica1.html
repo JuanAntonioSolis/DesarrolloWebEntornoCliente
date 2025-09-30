@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practica 1</title>
 </head>
+
 <body>
 
     <script>
@@ -164,7 +166,7 @@
             aux++;
             
         }
-               */
+               
 
 
         //2.21
@@ -181,28 +183,190 @@
             aux++;
             
         }
-
-
-
-
-
+            
         
-        
-
-
-
-
-
-
-
+        //2.23
+        let num; 
+        let cont = 0;
+        while(num!=9999){
+            num = parseInt(prompt("Escribe un número de varios dígitos"));
+            cont ++;
+        }
+        alert(`Se han introducido ${cont-1} números`);
         
 
+        //2.24
+        let num;
+        let suma = 0;
+        while(num!=9999){
+            num = parseInt(prompt("Escribe un número"));
+            suma += num;
+        }
+
+        alert(`La suma de los números introducidos es igual a ${suma-num}.`)
+        
+
+        //2.25
+        let num;
+        let prod = 1;
+        while(num!=9999){
+            num = parseInt(prompt("Escribe un número"));
+            prod *= num;
+        }
+
+        alert(`El producto de los números introducidos es igual a ${prod/num}.`)
+        
+        
+        //2.26
+        let car;
+        let contVocales = 0;
+        while(car!='*'){
+            car = prompt("Escribe un carácter");
+            switch(car){
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                    contVocales++;
+                    break;
+                default:        
+            }
+        }
+
+        alert(`Se han introducido ${contVocales} vocales`);
+        
+
+
+        //2.27
+        let car;
+        let palabra = '';
+        while(car!= '*'){
+            car = prompt("Escribe un carácter");
+            palabra += car;
+        }
+
+        alert(`Se ha formado la palabra ${palabra.substr(0,palabra.length-1)}.`)
+        
+
+        //2.28
+        let num;
+        let cont = 0;
+        let contImpar = 0;
+        let contPar = 0;
+        while(cont != 20){
+            cont++;
+            num = parseInt(prompt("Escribe un numerín"));
+            if(num % 2 === 0){
+                contPar++; 
+            }else {
+                contImpar++;
+            }
+            
+        }
+
+        alert(`Has introducido ${contImpar} números impares y ${contPar} números pares`);
 
         
 
+        //2.29
+        let esPrimo = true;
+        let cont = 2;
+
+        let primo = (num) => {
+            while (cont < num) {
+                if (num % cont == 0) {
+                    esPrimo = false;
+                }
+                cont++;
+            }
+
+            if (esPrimo) {
+                alert("Es un número primo");
+            } else {
+                alert("No es un número primo");
+            }
+
+        }
+
+        let numerin = parseInt(prompt("Escribe un número para comprobar si es primo"));
+        primo(numerin);
+
         
+
+        //2.30
+        function media(a,b,c,d){
+            let avg = (a+b+c+d) / 4;
+            alert(`La media de los números introducidos es: ${avg}`);
+        }
+
+        let num1 = parseInt(prompt("Escribe un número:"));
+        let num2 = parseInt(prompt("Escribe un número:"));
+        let num3 = parseInt(prompt("Escribe un número:"));
+        let num4 = parseInt(prompt("Escribe un número:"));
+
+        media(num1,num2,num3,num4);
+
         
+
+        //2.31
+        function cuadrado(char, num) {
+            for (let i = 1; i <= num; i++) {
+                for (let j = 1; j <= num; j++) {
+                    document.write(char);
+                }
+                document.write(`<br>`);
+            }
+
+        }
+
+        let carac = prompt("Introduce el carácter a escribir");
+        let num = parseInt(prompt("Escribe el número de lineas y columnas"));
+        cuadrado(carac,num);
+
+        
+
+        //2.32
+        function piramide(char, num) {
+            for (let i = num; i >= 1; i--) {
+                for (let j = 1; j <= i; j++) {
+                    document.write(char);
+                }
+                document.write(`<br>`);
+            }
+
+        }
+
+        let carac = prompt("Introduce el carácter a escribir");
+        let num = parseInt(prompt("Escribe el número de lineas y columnas"));
+        piramide(carac,num);
+        */
+
+        //2.33
+        function tiempo(tayer, thoy) {
+            let tiempo = tayer + thoy;
+            let prediccion;
+            switch (tiempo) {
+                case "SOLSOL":
+                case "NUBLADOSOL":
+                    prediccion = "SOL";
+                    break;
+                case "NUBLADONUBLADO":
+                case "SOLNUBLADO":
+                case "SOLLLUVIA":
+                case "LLUVIASOL":
+                case "LLUVIANUBLADO":
+                    prediccion = "NUBLADO";
+                    break;
+                default:
+                    prediccion = "LLUVIA";
+                
+            }
+        }
+
+
     </script>
-    
+
 </body>
+
 </html>

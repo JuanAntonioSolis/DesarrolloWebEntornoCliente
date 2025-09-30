@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos 2</title>
+</head>
+<body>
+
+    <script>
+        let num1;
+        let num2;
+        
+        do{
+            num1=parseInt(prompt("Escribe un número"));
+            console.log(typeof num1);
+        } while (isNaN(num1))
+
+        do{
+            num2=parseInt(prompt("Escribe otro número"));
+        } while (isNaN(num2))
+
+        let suma = num1+num2;
+        alert(`La suma de los dos números es ${suma}`);
+
+    </script>
+    
+</body>
+</html>

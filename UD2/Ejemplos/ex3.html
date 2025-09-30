@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .morao {
+            background-color: yellowgreen;
+            color: purple;
+            border: 1px solid black;
+        }
+
+        .amarillo{
+            background-color: purple;
+            color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="par1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat perferendis nostrum obcaecati id iusto
+        ipsum
+        corporis expedita unde tenetur rem magni saepe culpa libero aliquam laboriosam, quod harum minus aliquid?</p>
+    <p id="par2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti qui nihil ut ipsam voluptatem
+        recusandae aliquid? Blanditiis magni aspernatur animi, assumenda ducimus eos quisquam, voluptate ipsam
+        consectetur, facilis beatae unde?</p>
+
+    <script>
+        document.getElementById("par2").className = "amarillo";
+        document.getElementById("par1").className = "morao";
+        
+        let addTexto = nuevo => {
+            document.getElementById("par1").innerHTML=nuevo;
+        }
+
+        let anade = prompt("Escribe que texto quieres");
+        
+        addTexto(anade.toUpperCase());
+        
+
+        
+    </script>
+
+</body>
+
+</html>

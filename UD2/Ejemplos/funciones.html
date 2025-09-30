@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos funciones</title>
+</head>
+
+<body>
+
+    <script>
+        function alerta() {
+
+            let texto = prompt("Escribe algo");
+            console.log(texto);
+            alert(`Has escrito: ${texto}`);
+        }
+
+        alerta();
+
+        //==========================================================
+
+        function sumar(num1, num2) {
+            alert(`El resultado de la suma es ${num1 + num2}`);
+        }
+
+        let num1;
+        let num2;
+
+        do {
+            num1 = parseInt(prompt("Escribe un número"));
+            num2 = parseInt(prompt("Escribe otro número"));
+        } while (isNaN(num1) && isNaN(num2))
+
+        sumar(num1, num2);
+
+        //==========================================================
+
+        //Funciones flecha
+        let producto = (a, b) => {
+            let resultado = a * b;
+            alert(`El producto de ${a} x ${b} es igual a: ${resultado}`);
+        }
+
+        producto(num1, num2);
+
+        let holamundo = saludo => alert("Hola mundo");
+        holamundo();
+
+    </script>
+
+</body>
+
+</html>
