@@ -217,6 +217,7 @@
         alert(`El producto de los números introducidos es igual a ${prod/num}.`)
         
         
+
         //2.26
         let car;
         let contVocales = 0;
@@ -235,6 +236,8 @@
         }
 
         alert(`Se han introducido ${contVocales} vocales`);
+
+    
         
 
 
@@ -340,7 +343,7 @@
         let carac = prompt("Introduce el carácter a escribir");
         let num = parseInt(prompt("Escribe el número de lineas y columnas"));
         piramide(carac,num);
-        */
+        
 
         //2.33
         function tiempo(tayer, thoy) {
@@ -360,9 +363,113 @@
                     break;
                 default:
                     prediccion = "LLUVIA";
-                
             }
+            alert(`La previsión para mañana será: ${prediccion}`);
         }
+
+        let tiempoAyer = prompt("Escribe que tiempo hizo ayer").toUpperCase();
+        let tiempoHOY = prompt("Escribe que tiempo hace hoy").toUpperCase();
+        tiempo(tiempoAyer,tiempoHOY);
+
+        
+
+        //2.34
+        function area(figura){
+        
+
+            switch(figura){
+                case "TRIANGULO":
+                    var base = parseInt(prompt("Escribe la medida de la base:"));
+                    var altura = parseInt(prompt("Escribe la altura del tríangulo:"));
+                    alert(`El área de ese triángulo es: ${base*altura/2}`);
+                    break;
+                case "RECTANGULO":
+                    var base = parseInt(prompt("Escribe la medida de la base:"));
+                    var altura = parseInt(prompt("Escribe la altura del rectángulo:")); 
+                    alert(`El área de ese rectángulo es: ${base*altura}`);
+                    break;
+                case "CIRCULO":
+                    var radio = parseInt(prompt("Escribe el radio del círculo:"));
+                    alert(`El área de el círculo es: ${Math.PI * (radio**2)}`);
+                    break;
+                default:
+            }
+
+        }
+
+        let fig = prompt("Escribe qué figura quieres calcular su área: ").toUpperCase();
+        area(fig);
+
+        
+
+        //2.35
+        function suma(){
+            let num = parseInt(prompt("Escribe un número:"));
+            let suma = 0;
+            
+            for(let i = 1;i<= num;i++){
+                suma += i;
+            }
+
+            alert(`La suma del 1 al ${num} es: ${suma}`);
+        
+        }
+        
+        suma();
+
+        
+
+        //2.36
+        function sumaVocales() {
+            let char;
+            let cont = 0;
+            while (char != "*") {
+                char = prompt("Escribe un carácter");
+                switch (char) {
+                    case 'a':
+                    case 'e':
+                    case 'i':
+                    case 'o':
+                    case 'u':
+                    case 'A':
+                    case 'E':
+                    case 'I':
+                    case 'O':
+                    case 'U':
+                        cont++;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            alert(`Has introducido ${cont} vocales`);
+        }
+
+        sumaVocales();
+
+        
+
+        //2.37
+        function formaPalabra() {
+            let car;
+            let palabra = '';
+            while (car != '*') {
+                car = prompt("Escribe un carácter");
+                palabra += car;
+            }
+
+            alert(`Se ha formado la palabra ${palabra.substr(0, palabra.length - 1)}.`)
+        }
+
+        formaPalabra();
+
+        */
+
+        //2.38
+
+
+
+
 
 
     </script>
