@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+</head>
+
+<body>
+    <h1>Formulario Recogida de Datos</h1>
+    <form>
+        <label for="">Nombre</label> <input type="text" name="nombre" id="nombre">
+        <label for="">Apellidos</label> <input type="text" name="apellidos" id="apellidos">
+
+        <br><br>
+        <label for="">Aficiones</label>
+        <select name="aficiones" id="aficiones">
+            <option value="skate">Skate</option>
+            <option value="musica">Musica</option>
+            <option value="programar">Programar</option>
+        </select>
+
+        <br><br>
+        <input type="button" value="Saludar" id="saludar">
+
+        <br><br>
+        <label for="">Cambiar el color del párrafo =></label>
+        <input type="color" name="color" id="color" onchange="cambiarColor()">
+
+        <p id="par">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, quas nobis nesciunt dolor facilis neque
+            ab. Cum error hic ipsam accusantium sapiente repudiandae autem odio dolorum modi, fuga earum iure.
+        </p>
+
+        <p id="impar">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, dolore cum. Nostrum quam tempore sequi
+            voluptates sit, porro totam esse, corrupti perferendis vitae repellendus numquam provident beatae
+            voluptatibus non dicta!
+        </p>
+
+
+
+    </form>
+
+    <script>
+        function salute() {
+            let nombre = document.getElementById("nombre").value;
+            let surname = document.getElementById("apellidos").value;
+            let afi = document.getElementById("aficiones").value;
+            alert(`Hola ${nombre} ${surname}, tu mayor afición es: ${afi}`);
+        }
+
+        function cambiarColor() {
+
+            document.getElementById("par").style.backgroundColor = document.getElementById("color").value;
+        }
+
+        document.getElementById("saludar").addEventListener("click", salute, false);
+
+        let frutas = ["Pera","Manzana","Banana","Piña","Mango","Fresa","Sandía"];
+
+        for (fruta in frutas){
+            document.write(`${frutas[fruta]} , `);
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>
