@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rojo{
+            background-color: rgb(248, 196, 25);
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function esPar(num){
+            if (num % 2 == 0){
+                return true;
+            } else 
+                return false;
+        }
+
+
+        for(let i = 1; i<= 300; i++){
+            
+
+            if(esPar(i)){
+                document.write("<span style='font-size: 22px;'>" + i + " " + "</span>");
+            }else if(i % 9 == 0) {
+                document.write("<span class='rojo'>" + i + " " + "</span>");   
+            } else{
+                document.write(i + " ");
+            }
+
+            if (i % 10 == 0){
+                document.write("<br>");
+            }
+            
+            
+        }
+    </script>
+
+</body>
+
+</html>

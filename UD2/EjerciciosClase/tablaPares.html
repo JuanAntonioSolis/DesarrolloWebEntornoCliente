@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table td {
+            border: 1px solid black;
+
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        .amarillo {
+            background-color: rgb(255, 255, 61);
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        let filas = parseInt(prompt("Escribe un número de filas:"));
+        let columnas = parseInt(prompt("Escribe un número de columnas:"));
+        let contador = 1;
+
+        function construyeTabla() {
+            document.write("<table>");
+            for (let i = 0; i < filas; i++) {
+                document.write("<tr>");
+                for (let j = 0; j < columnas; j++) {
+                    if (par(contador)) {
+                        document.write("<td class='amarillo'>  " + contador + "</td>");
+                    } else
+                        document.write("<td> " + contador + "</td>");
+                    contador++;
+
+                }
+                document.write("</tr>");
+            }
+
+            document.write("</table>");
+        }
+
+        function par(numero) {
+            if (numero % 2 == 0) {
+                return true;
+            } else
+                return false;
+        }
+
+        construyeTabla();
+
+
+
+    </script>
+
+</body>
+
+</html>
