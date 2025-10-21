@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="ej11">
+        Ejercicio 11
+    </button>
+
+    <button id="ej14">
+        Ejercicio 14
+    </button>
+
+    <script>
+        /* //Ejercicio1
+        function nombreDiaSemana(dia) {
+            switch (dia) {
+                case 0:
+                    alert("Domingo");
+                    break;
+                case 1:
+                    alert("Lunes");
+                    break;
+                case 2:
+                    alert("Martes");
+                    break;
+                case 3:
+                    alert("Miércoles");
+                    break;
+                case 4:
+                    alert("Jueves");
+                    break;
+                case 5:
+                    alert("Viernes");
+                    break;
+                case 6:
+                    alert("Sábado");
+                    break;
+                default:
+                    break;
+
+            }
+        }
+
+        let fecha = new Date();
+        nombreDiaSemana(fecha.getDay());
+        
+
+        //Ejercicio 2
+        function nombreDiaSemana(dia) {
+            switch (dia) {
+                case 0:
+                    alert("Dom");
+                    break;
+                case 1:
+                    alert("Lun");
+                    break;
+                case 2:
+                    alert("Mar");
+                    break;
+                case 3:
+                    alert("Mie");
+                    break;
+                case 4:
+                    alert("Jue");
+                    break;
+                case 5:
+                    alert("Vie");
+                    break;
+                case 6:
+                    alert("Sab");
+                    break;
+                default:
+                    break;
+
+            }
+        }
+
+        let fecha = new Date();
+        nombreDiaSemana(fecha.getDay());
+        
+
+        //Ejercicio 3
+        function nombreMes(mes) {
+            switch (mes) {
+                case 0:
+                    alert("Enero");
+                    break;
+                case 1:
+                    alert("Febrero");
+                    break;
+                case 2:
+                    alert("Marzo");
+                    break;
+                case 3:
+                    alert("Abril");
+                    break;
+                case 4:
+                    alert("Mayo");
+                    break;
+                case 5:
+                    alert("Junio");
+                    break;
+                case 6:
+                    alert("Julio");
+                    break;
+                case 7:
+                    alert("Agosto");
+                    break;
+                case 8:
+                    alert("Septiembre");
+                    break;
+                case 9:
+                    alert("Octubre");
+                    break;
+                case 10:
+                    alert("Noviembre");
+                    break;
+                case 11:
+                    alert("Diciembre");
+                    break;
+                default:
+                    break;
+
+            }
+        }
+
+        let fecha = new Date();
+        nombreMes(fecha.getMonth());
+        
+
+        //Ejercicio 4
+        function nombreMes(mes) {
+            switch (mes) {
+                case 0:
+                    alert("Ene");
+                    break;
+                case 1:
+                    alert("Feb");
+                    break;
+                case 2:
+                    alert("Mar");
+                    break;
+                case 3:
+                    alert("Abr");
+                    break;
+                case 4:
+                    alert("May");
+                    break;
+                case 5:
+                    alert("Jun");
+                    break;
+                case 6:
+                    alert("Jul");
+                    break;
+                case 7:
+                    alert("Ago");
+                    break;
+                case 8:
+                    alert("Sep");
+                    break;
+                case 9:
+                    alert("Oct");
+                    break;
+                case 10:
+                    alert("Nov");
+                    break;
+                case 11:
+                    alert("Dic");
+                    break;
+                default:
+                    break;
+
+            }
+        }
+
+        let fecha = new Date();
+        nombreMes(fecha.getMonth());
+        
+
+        //Ejercicio 5
+        function matematicas(num1, num2, num3, num4) {
+            let maximo = Math.max(num1, num2, num3, num4);
+            let minimo = Math.min(num1, num2, num3, num4);
+
+            alert(`El máximo de los números es: ${maximo} y el mínimo: ${minimo}`);
+        }
+
+        let n1 = parseInt(prompt("Introduce un número:"));
+        let n2 = parseInt(prompt("Introduce un número:"));
+        let n3 = parseInt(prompt("Introduce un número:"));
+        let n4 = parseInt(prompt("Introduce un número:"));
+
+        matematicas(n1, n2, n3, n4);
+
+
+        //Ejercicio 6
+        function aleatorios(){
+            for(let i = 0; i < 6; i++){
+                let i = parseInt((Math.random()*50));
+                document.write(`${i}, `);
+            }
+        }
+
+        aleatorios();
+
+
+        //Ejercicio 7
+        function quiniela(){
+            
+            for(let i = 0; i <15; i++){
+                let num = parseInt((Math.random()*3));
+                if(num === 0){
+                    num = "X";
+                }
+                
+                document.write(num + "<br>");
+            }
+        }
+
+        quiniela();
+
+
+        //Ejercicio 8
+        function longitud(){
+            let cadena;
+            do{
+                cadena = prompt("Escribe algo");
+                
+            } while (cadena.length <= 2);
+        }
+        longitud();
+
+
+        //Ejercicio 9
+        let nombre;
+        let cont = 0;
+        do{
+            nombre = prompt("Escribe un nombre:");
+            cont++;
+        } while (nombre !== "Fin");
+
+        alert (`Se escribieron ${cont-1} nombres`);
+
+
+        //Ejercicio 10
+        let nombre;
+        let cont = 0;
+        do{
+            nombre = prompt("Escribe un nombre:");
+            cont++;
+        } while (nombre.toLowerCase() !== "fin");
+
+        alert (`Se escribieron ${cont-1} nombres`);
+
+        
+
+        //Ejercicio 11
+        function buscar(){
+            let fuente = prompt("Escribe una frase o texto");
+            let clave = prompt("Escribe qué quieres buscar");
+
+            let pos = fuente.indexOf(clave);
+
+            if(pos >= 0){
+                document.write(`${clave} está en la posición ${pos}`);
+            } else{
+                document.write(`${clave} no se encontró en: ${fuente}`);
+            }
+            
+        }
+
+        document.getElementById("ej11").addEventListener("click",buscar,false);
+
+        //Ejercicio 13
+        function palindromo(){
+            let palabra = prompt("Escribe una palabra");
+            palabra.toLowerCase();
+
+            if (palabra === palabra.split('').reverse().join('')){
+                alert("Es un palíndromo");
+            } else
+                alert("No es un palíndromo");
+        }
+
+        palindromo();
+
+        //Ejercicio 14
+        function comprobarEmail(){
+            let mail = prompt("Escribe tu dirección de email");
+            
+            if(mail.indexOf("@") < 0){
+                alert("Este correo no tiene @, no es un correo electrónico")
+            } else
+                alert("Correo electrónico correcto");
+        }
+
+        document.getElementById("ej14").addEventListener("click",comprobarEmail,false);
+
+        //Ejercicio 15
+        function cadenas(){
+            let texto = prompt("Escribe un texto o frase");
+            let mitad = texto.substring(0,texto.length/2);
+            let ultimoCaracter = texto.charAt(texto.length-1);
+            let inverso = texto.split('').reverse().join('');
+            let separado = texto.split('').join('-');
+
+            document.write("<br>");
+            document.write(`a) Primera mitad de los carácteres: ${mitad}`);
+            document.write("<br>");
+            document.write(`b) Último carácter: ${ultimoCaracter}`);
+            document.write("<br>");
+            document.write(`c) Cadena inversa: ${inverso}`);
+            document.write("<br>");
+            document.write(`d) Cadena con carácteres separados: ${separado}`);
+            
+        }
+
+        cadenas();
+
+        */
+
+        //Ejercicio 16
+        function oracion(){
+            let texto = prompt("Escribe una oración");
+            
+           
+            
+        }
+
+        oracion();
+
+
+    </script>
+
+</body>
+
+</html>
