@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Predefinido Window</title>
+</head>
+
+<body>
+
+    <form>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre">
+
+        <input type="button" value="Abrir Ventana" onclick="abrirVentana()">
+        <br> <br>
+        <label for="">Cambiar color</label>
+        <input type="color" id="color" onchange="cambiaColor()">
+
+    </form>
+
+    <script>
+        let ventana = "";
+
+        function abrirVentana() {
+            ventana = window.open("", "Mi ventana", "width = 500, height = 500");
+            ventana.document.write(`<h1> Bienvenido a mi ventana ${document.getElementById("nombre").value}</h1>`);
+            ventana.document.bgColor = document.getElementById("color").value;
+            ventana.document.write("<input type='color' id='color1' onchange=document.bgColor=document.getElementById('color1').value>");
+
+        }
+
+        function cambiaColor() {
+            document.bgColor = document.getElementById("color").value;
+        }
+
+    </script>
+</body>
+
+</html>

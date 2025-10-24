@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj</title>
+    <style>
+        table{
+            border: 2px solid red;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body onload="moverReloj()">
+
+    <table id="parrafo">
+
+    </table>
+    
+    <script>
+
+        function moverReloj() {
+            let fecha = new Date();
+            let hora = fecha.getHours();
+            let minuto = fecha.getMinutes();
+            let secs = fecha.getSeconds();
+            let parrafo = document.getElementById("parrafo");
+            console.log(parrafo)
+            if (secs < 10){
+                secs = (`0${secs}`);
+            }
+            if (minuto < 10){
+                minuto = (`0${minuto}`);
+            }
+            if (hora < 10){
+                hora = (`0${hora}`);
+            }
+            parrafo.innerHTML=(`${hora} : ${minuto} : ${secs}`);
+
+            setTimeout("moverReloj()",1000);
+        }
+
+        
+
+
+    </script>
+
+</body>
+
+</html>
