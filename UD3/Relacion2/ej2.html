@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="ej1">
+        Ejercicio 1
+    </button> <br> <br>
+
+    <button id="ej2">
+        Ejercicio 2
+    </button> <br> <br>
+
+    <button id="ej3">
+        Ejercicio 3
+    </button> <br> <br>
+    <button id="ej4">
+        Ejercicio 4
+    </button> <br> <br>
+    <button id="ej5">
+        Ejercicio 5
+    </button> <br> <br>
+    <button id="ej6">
+        Ejercicio 6
+    </button> <br> <br>
+    <button id="ej7">
+        Ejercicio 7
+    </button> <br> <br>
+    <button id="ej8">
+        Ejercicio 8
+    </button> <br> <br>
+    <button id="ej9">
+        Ejercicio 9
+    </button> <br> <br>
+    <button id="ej10">
+        Ejercicio 10
+    </button> <br> <br>
+    <button id="ej11">
+        Ejercicio 11
+    </button> <br> <br>
+    <button id="ej12">
+        Ejercicio 12
+    </button> <br> <br>
+    <button id="ej13">
+        Ejercicio 13
+    </button> <br> <br>
+    <button id="ej14">
+        Ejercicio 14
+    </button> <br> <br>
+    <button id="ej15">
+        Ejercicio 15
+    </button> <br> <br>
+
+
+    <script>
+        //Ejercicio 1
+        function guardarNumeros() {
+            let numeros = new Array();
+
+            for (let i = 1; i <= 10; i++) {
+                let num = parseInt(prompt("Escribe un número"));
+                numeros.push(num);
+            }
+
+            document.write(numeros);
+        }
+
+        document.getElementById("ej1").addEventListener("click", guardarNumeros, false);
+
+        //Ejercicio 2
+
+        function sumaArray(){
+            
+            let nums = new Array(7,3,6,4);
+
+            let suma = nums.join(".");
+            
+            document.write(suma);
+        }
+
+        document.getElementById("ej2").addEventListener("click",sumaArray,false);
+
+
+
+    </script>
+
+</body>
+
+</html>
