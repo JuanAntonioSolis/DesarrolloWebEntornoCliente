@@ -204,13 +204,13 @@
         }
 
         //Ejercicio 9
-        function contVecesAparece(){
+        function contVecesAparece() {
             let numero = parseInt(prompt("Elige un número del array"));
-            let lista = new Array(1,3,4,2,5,3,6,4,2,6,5,2,1,4,3,2,1,2);
+            let lista = new Array(1, 3, 4, 2, 5, 3, 6, 4, 2, 6, 5, 2, 1, 4, 3, 2, 1, 2);
             let cont = 0;
 
-            for(let i = 0; i < lista.length; i++){
-                if (numero == lista[i]){
+            for (let i = 0; i < lista.length; i++) {
+                if (numero == lista[i]) {
                     cont++;
                 }
             }
@@ -218,11 +218,47 @@
             document.write(`El número ${numero}, aparece ${cont} veces en el Array`);
         }
 
-        document.getElementById("ej9").addEventListener("click",contVecesAparece,false);
+        document.getElementById("ej9").addEventListener("click", contVecesAparece, false);
 
         //Ejercicio 10
 
+        function combinarArrays() {
+            let arr1 = new Array(1, 2, 3, 4, 5);
+            let arr2 = new Array(6, 7, 8, 9, 10);
+            
+
+            let arrCombinado = arr1.concat(arr2);
+
+            document.write(`Array 1: ${arr1} <br>`);
+            document.write(`Array 2: ${arr2} <br>`);
+            document.write(`Array Combinado: ${arrCombinado}`);
+
+        }
+
+        document.getElementById("ej10").addEventListener("click",combinarArrays,false);
+
+        //Ejercicio 11
+
+        function delRepetidos(){
+            let arr1 = new Array(1,2,3,3,4,5,5,10,9,8,8);
+            
+            for (let i = 0; i < arr1.length; i++){
+                let num = arr1[i];
+                
+            }
+
+            document.write(num);
+
+            
+        }
+
+        document.getElementById("ej11").addEventListener("click",delRepetidos,false);
+
         
+
+
+
+
 
 
 
