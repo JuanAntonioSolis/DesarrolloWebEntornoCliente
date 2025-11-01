@@ -187,21 +187,14 @@
         function delElemento() {
             let lista = new Array(1, 2, 3, 4, 5, 6);
             let num = parseInt(prompt("Introduce un número a eliminar"));
-            let posic = new Array();
 
-            for (let i = 0; i < lista.length; i++) {
-                if (num == lista[i]) {
-                    posic.push(i);
-                }
-            }
-            if (posic.length > 0) {
+            lista = lista.filter(numero => numero !== num);
 
-            } else {
-                document.write(`${num} no se ha encontrado en el Array, no se ha podido borrar.`);
-            }
-
+            document.write(lista);
 
         }
+
+        document.getElementById("ej8").addEventListener("click",delElemento,false);
 
         //Ejercicio 9
         function contVecesAparece() {
@@ -241,18 +234,26 @@
 
         function delRepetidos(){
             let arr1 = new Array(1,2,3,3,4,5,5,10,9,8,8);
+            let nuevo = new Array();
             
             for (let i = 0; i < arr1.length; i++){
-                let num = arr1[i];
+                if(!nuevo.includes(arr1[i])){
+                    nuevo.push(arr1[i])
+                }
                 
             }
 
-            document.write(num);
+            document.write(`Array original: ${arr1}`);
+            document.write(`Array sin repetidos: ${nuevo}`);
+            
 
             
         }
 
         document.getElementById("ej11").addEventListener("click",delRepetidos,false);
+
+        //Ejercicio 12
+        
 
         
 
