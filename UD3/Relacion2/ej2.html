@@ -194,7 +194,7 @@
 
         }
 
-        document.getElementById("ej8").addEventListener("click",delElemento,false);
+        document.getElementById("ej8").addEventListener("click", delElemento, false);
 
         //Ejercicio 9
         function contVecesAparece() {
@@ -218,7 +218,7 @@
         function combinarArrays() {
             let arr1 = new Array(1, 2, 3, 4, 5);
             let arr2 = new Array(6, 7, 8, 9, 10);
-            
+
 
             let arrCombinado = arr1.concat(arr2);
 
@@ -228,34 +228,123 @@
 
         }
 
-        document.getElementById("ej10").addEventListener("click",combinarArrays,false);
+        document.getElementById("ej10").addEventListener("click", combinarArrays, false);
 
         //Ejercicio 11
 
-        function delRepetidos(){
-            let arr1 = new Array(1,2,3,3,4,5,5,10,9,8,8);
+        function delRepetidos() {
+            let arr1 = new Array(1, 2, 3, 3, 4, 5, 5, 10, 9, 8, 8);
             let nuevo = new Array();
-            
-            for (let i = 0; i < arr1.length; i++){
-                if(!nuevo.includes(arr1[i])){
+
+            for (let i = 0; i < arr1.length; i++) {
+                if (!nuevo.includes(arr1[i])) {
                     nuevo.push(arr1[i])
                 }
-                
+
             }
 
             document.write(`Array original: ${arr1}`);
             document.write(`Array sin repetidos: ${nuevo}`);
-            
-
-            
         }
 
-        document.getElementById("ej11").addEventListener("click",delRepetidos,false);
+        document.getElementById("ej11").addEventListener("click", delRepetidos, false);
 
         //Ejercicio 12
-        
+        function desplazar() {
+            let lista = new Array(1, 2, 3, 4);
+            let primero = lista.pop();
+            lista.unshift(primero);
 
-        
+            document.write(lista);
+
+
+
+        }
+
+        document.getElementById("ej12").addEventListener("click", desplazar, false);
+
+        //Ejercicio 13
+        function nuevosArrays() {
+            let lista = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+            let pares = new Array();
+            let impares = new Array();
+
+            for (let i = 0; i < lista.length; i++) {
+                if (lista[i] % 2 === 0) {
+                    pares.push(lista[i]);
+                } else {
+                    impares.push(lista[i]);
+                }
+            }
+
+            document.write(`Lista original: ${lista} <br>`);
+            document.write(`Lista de pares: ${pares} <br>`);
+            document.write(`Lista de impares: ${impares} <br>`);
+
+        }
+
+        document.getElementById("ej13").addEventListener("click", nuevosArrays, false);
+
+        //Ejercicio 14
+        function mediaExtremos() {
+            let lista = new Array(10, 20, 23, 14, 51, 16, 7, 8, 9, 10);
+
+            let mayor = lista[0];
+            let menor = lista[0];
+            let suma = 0;
+
+            for (let i = 1; i < lista.length; i++) {
+                mayor = Math.max(mayor, lista[i]);
+                menor = Math.min(menor, lista[i]);
+            }
+
+            lista = lista.filter(num => num !== mayor && num !== menor); //Lista sin menor ni mayor
+
+
+            for (let i = 0; i < lista.length; i++) {
+                suma += lista[i];
+            }
+
+            let media = suma / lista.length;
+
+            document.write(`La media de los números es: ${media}`);
+
+        }
+
+        document.getElementById("ej14").addEventListener("click", mediaExtremos, false);
+
+        //Ejercicio 15
+        function notasAlumnos() {
+            let notas = [4, 7, 9, 10, 7, 6, 8];
+            let mayorNota = notas[0];
+            let menorNota = notas[0];
+            let aprobados = notas.filter(nota => nota >= 5);
+            let porcentajeAprobados = ((aprobados.length/notas.length) * 100);
+            let suma = 0;
+
+            //Media
+            for (let i = 0; i < notas.length; i++) {
+                suma += notas[i];
+            }
+
+            let media = suma / notas.length;
+
+            //Mayor y menor nota
+            for (let i = 1; i < notas.length; i++) {
+                mayorNota = Math.max(mayorNota, notas[i]);
+                menorNota = Math.min(menorNota, notas[i]);
+            }
+
+            document.write(`El promedio de los alumnos es: ${media} <br>`);
+            document.write(`La nota más alta es:  ${mayorNota} <br>`);
+            document.write(`La nota más baja es: ${menorNota}<br>`);
+            document.write(`El porcentaje de aprobados es:  ${porcentajeAprobados}%`);
+        }
+
+        document.getElementById("ej15").addEventListener("click",notasAlumnos,false);
+
+
+
 
 
 

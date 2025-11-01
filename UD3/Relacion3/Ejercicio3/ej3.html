@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio3Relacion3</title>
+    <style>
+        img {
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body onload="cambiarBanner()">
+
+    <img src="./imagenes/dado01.png" id="banner">
+
+    <script>
+
+        function cambiarBanner() {
+            let rand = Math.floor(Math.random() * 6) + 1;
+            let foto = document.getElementById("banner");
+
+            foto.src = './imagenes/dado0' + rand + '.png';
+
+        
+
+            setTimeout("cambiarBanner()", 1000);
+        }
+
+    </script>
+
+</body>
+
+</html>

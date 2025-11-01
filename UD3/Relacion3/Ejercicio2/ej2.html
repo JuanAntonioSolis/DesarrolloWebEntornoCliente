@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2Relacion3</title>
+    <style>
+        #container {
+            display: flex;
+            gap: 40px;
+        }
+
+        #container div {
+            width: 100px;
+            height: 100px;
+
+        }
+
+        #red {
+            background-color: red;
+        }
+
+        #green {
+            background-color: green;
+        }
+
+        #yellow {
+            background-color: yellow;
+        }
+
+        #blue {
+            background-color: blue;
+        }
+
+        #black {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="red" onMouseOver="cambiarFondo('red')"></div>
+        <div id="green" onMouseOver="cambiarFondo('green')"></div>
+        <div id="yellow" onMouseOver="cambiarFondo('yellow')"></div>
+        <div id="blue" onMouseOver="cambiarFondo('blue')"></div>
+        <div id="black" onMouseOver="cambiarFondo('black')"></div>
+    </div>
+
+    <script>
+        function cambiarFondo(color) {
+            
+            document.body.style.backgroundColor = color;
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1Relacion3</title>
+    <style>
+        img{
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <img src="./imagenes/dado01.png" id="imagen">
+        <audio src="./sonidos/dado.mp3" id="audio"></audio>
+        <form>
+            <input type="button" value="Lanzar dado" onclick="tirardado()">
+        </form>
+    </div>
+
+    <script>
+        function tirardado(){
+            let rand = Math.floor(Math.random()*6)+1;
+            let dado = document.getElementById("imagen");
+            let sonido = document.getElementById("audio");
+
+            sonido.play();
+
+            dado.src = './imagenes/dado0' + rand + '.png';
+
+
+        }
+        
+
+    </script>
+    
+</body>
+</html>
