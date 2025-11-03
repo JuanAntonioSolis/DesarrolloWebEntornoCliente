@@ -1,21 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actividad5TareaUD3</title>
 </head>
+
 <body>
 
 
 
     <script>
 
-        let cadena = prompt("Escribe - nombre:apellidos:telefono:email:codigopostal");
+        function informacion() {
+            let cadena = prompt("Escribe - nombre:apellidos:telefono:email:codigopostal");
 
-        
+            let info = cadena.split(":");
+
+            let nombre = info[0];
+            let apellidos = info[1];
+            let telefono = info[2];
+            let email = info[3];
+            let codigopostal = info[4];
+            let servidor = email.split("@");
+
+            
+            document.body.innerHTML = (`
+            <table>
+                <ul>
+                    <li>Codigo postal: ${codigopostal}</li>
+                    <li>Apellidos: ${apellidos}</li>
+                    <li>Email: ${email}</li>
+                    <li>Servidor mail: ${servidor[1]}</li>
+                </ul>
+            </table>`);
+           
+            
+
+
+        }
+
+        informacion();
 
     </script>
-    
+
 </body>
+
 </html>

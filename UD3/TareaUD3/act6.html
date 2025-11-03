@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad6TareaUD3</title>
+</head>
+
+<body>
+
+    <div id="container">
+        <h3>Actividad 6</h3>
+
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre"> <br> <br>
+
+            <label for="age">Edad:</label>
+            <input type="text" name="age" id="age" size="2"> <br> <br>
+
+            <label for="aficion">Aficiones:</label>
+            <select name="aficion" id="aficion">
+                <option value="elegir">Elegir</option>
+                <option value="natacion">Natación</option>
+                <option value="lectura">Lectura</option>
+                <option value="musica">Música</option>
+                <option value="snowboard">Snowboard</option>
+            </select> <br><br>
+
+            <input type="button" value="Enviar" onclick="validar()">
+        </form>
+
+    </div>
+
+    <script>
+
+        let ventana = "";
+
+        function validar(){
+           
+            if (document.getElementById("nombre").value == ""){
+                alert("Debes rellenar el nombre");
+            } else if (document.getElementById("age").value < 18) {
+                alert("Debes ser mayor de edad");
+            } else if (document.getElementById("aficion").value == "elegir"){
+                alert("Debes rellenar tu afición");
+            } else{
+                abrirVentana();
+            }
+            
+        }
+    
+
+        function abrirVentana(){
+            ventana = window.open("","Validación de formulario","width = 500, height = 500");
+            ventana.document.write(`
+            <h1> Nombre: ${document.getElementById("nombre").value} </h1> <br>
+            <h1> Edad: ${document.getElementById("age").value} </h1> <br>
+            <h1> Aficion: ${document.getElementById("aficion").value} </h1> 
+            `)
+        }
+
+    </script>
+
+</body>
+
+</html>
