@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reloj</title>
     <style>
-        table{
+        table {
             border: 2px solid red;
             border-radius: 10px;
             background-color: black;
@@ -20,7 +20,7 @@
     <table id="parrafo">
 
     </table>
-    
+
     <script>
 
         function moverReloj() {
@@ -30,21 +30,21 @@
             let secs = fecha.getSeconds();
             let parrafo = document.getElementById("parrafo");
             console.log(parrafo)
-            if (secs < 10){
+            if (secs < 10) {
                 secs = (`0${secs}`);
             }
-            if (minuto < 10){
+            if (minuto < 10) {
                 minuto = (`0${minuto}`);
             }
-            if (hora < 10){
+            if (hora < 10) {
                 hora = (`0${hora}`);
             }
-            parrafo.innerHTML=(`${hora} : ${minuto} : ${secs}`);
+            parrafo.innerHTML = (`${hora} : ${minuto} : ${secs}`);
 
-            setTimeout("moverReloj()", 1000);
+            setTimeout(moverReloj, 1000);
         }
 
-        
+
 
 
     </script>

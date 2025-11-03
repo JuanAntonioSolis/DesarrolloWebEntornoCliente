@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad4TareaUD3</title>
+</head>
+<body>
+
+    <script>
+        function calcularParlindromo(){
+
+            let esPrimo = true;
+            let esPalindromo = true;
+            let cont = 2;
+            let contadorCas = 0;
+            let listaPerfectos = [];
+            
+            for (let i = 1; i<= 100000;i++){
+
+                while (cont < i ){
+                    if(i % cont == 0){
+                        esPrimo = false;
+                    }
+                    cont++;
+                }
+
+                let num = String(i);
+
+                if (num.split("").reverse().join("") === num && esPrimo){
+                    contadorCas++;
+                    listaPerfectos.push(i);
+                }
+                
+
+
+            }
+
+            document.write(`Hay ${listaPerfectos.length} números primos y capicúa a la vez<br>`);
+            document.write(`${listaPerfectos.join(", ")}`);
+        }
+
+        calcularParlindromo();
+    </script>
+    
+</body>
+</html>

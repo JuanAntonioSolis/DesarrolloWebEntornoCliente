@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad3TareaUD3</title>
+</head>
+
+<body>
+
+    <script>
+        function pedirLetra() {
+            let letrasDni = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
+
+            let letraPedida = prompt("Escribe una letra de la A a la Z").toUpperCase();
+
+            let lista = [];
+
+            for (let i = 1; i<= 999; i++){
+                let resto = i % 23;
+                let letra = letrasDni[resto];
+
+                
+
+                if(letra == letraPedida){
+                    let numero = i.toString().padStart(3, '0');
+                    lista.push(`${numero}${letra}`);
+                }
+            }
+
+            document.write(`Hay ${lista.length} DNIs que terminan en ${letraPedida} <br>`);
+            document.write(`${lista.join(", ")}`);
+            
+        }
+
+        pedirLetra();
+    </script>
+
+</body>
+
+</html>

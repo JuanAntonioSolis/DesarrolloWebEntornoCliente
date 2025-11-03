@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad1TareaUD3</title>
+</head>
+
+<body>
+
+    <p id="parrafo">
+
+    </p>
+
+
+    <script>
+
+        let d = setInterval(pedirDnis, 3000);
+
+        let cadena = "";
+        let texto = document.getElementById("parrafo");
+
+        function pedirDnis() {
+            let dni = prompt("Escribe tu DNI:");
+
+            cadena += dni.charAt(dni.length - 1);
+            
+
+            if (dni === "-1") {
+                clearInterval(d);
+                texto.innerHTML = cadena.substring(0,[cadena.length-1]);
+            }
+
+
+
+        }
+
+        pedirDnis();
+
+
+
+    </script>
+
+</body>
+
+</html>
