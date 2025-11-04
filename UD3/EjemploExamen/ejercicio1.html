@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1Examen</title>
+    <style>
+        .circulo{
+            border: 1px solid black;
+            width: 20px;
+            border-radius: 50%;
+            text-align: center;
+        }
+
+        body{
+            display: flex;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <form>
+            <input type="button" value="Generar Quiniela" onclick="generarQuiniela()">
+        </form>
+    </div>
+
+    <script>
+
+        function generarQuiniela(){
+            let combinacion = [];
+            let reintegro = parseInt((Math.random()*9));
+            let result = "";
+            let fecha = new Date();
+            let dia = fecha.getDay();
+            let mes = fecha.getMonth();
+            let año = fecha.getFullYear();
+            let fechaFinal = `${dia}/${mes}/${año}`;
+
+
+            while (combinacion.length < 7){
+                let numero = Math.floor(Math.random()*49)+1;
+                if (!combinacion.includes(numero)){
+                    combinacion.push(numero);
+                }
+            }
+
+            combinacion.push(reintegro);
+
+            for (let i = 0; i< combinacion.length;i++){
+                result += `<p class="circulo">${combinacion[i]}</p>`;
+            }
+
+
+            document.body.innerHTML = (`${result} <br> ${fechaFinal}`);
+        }
+        
+
+    </script>
+    
+</body>
+</html>
