@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cuadro {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <input type="checkbox" id="visible" onchange="mostrarOcultar()" checked="checked">
+        <label for="visible">Contenedor visible</label> <br> <br>
+
+        <div id="cuadro"></div> <br>
+
+        <input type="button" value="Apagar" onclick="mostrarOcultar()" id="apagar">
+
+    </div>
+
+    <script>
+
+        function ocultarCuadro() {
+            let cuadro = document.getElementById("cuadro");
+
+            cuadro.style.visibility = "hidden";
+            cuadro.style.display = "none";
+
+        }
+
+        function mostrarCuadro() {
+
+            let cuadro = document.getElementById("cuadro");
+
+            cuadro.style.visibility = "visible";
+            cuadro.style.display = "block";
+
+        }
+
+        function mostrarOcultar() {
+            let cuadro = document.getElementById("cuadro");
+            let boton = document.getElementById("apagar");
+            let check = document.getElementById("visible");
+
+            if (cuadro.style.display == "block" || cuadro.style.display == "") {
+                ocultarCuadro();
+                boton.value = "Encender";
+
+                check.checked = "";
+            } else {
+                mostrarCuadro();
+                boton.value = "Apagar";
+
+                check.checked = "checked";
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

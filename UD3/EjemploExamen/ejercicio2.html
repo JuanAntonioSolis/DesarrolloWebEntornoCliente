@@ -13,6 +13,7 @@
 
     <script>
         let publi = document.getElementById("banner");
+        let contador = 0;
 
         function cambiarPubli(){
             let anuncio1 = ["Ciclo de Grado superior de Desarrollo de Aplicaciones Webs", 
@@ -20,27 +21,16 @@
             "I.E.S Jaroso",
             "Es tu oportunidad de encontrar un buen trabajo",
             "Plan Erasmus"];
-            let anuncio2 = ["Oposiciones Guardia Civil Granada", 
-            "Apúntate a nuestra academia para formarte",
-            "Academia Granada Civil",
-            "Es tu oportunidad de seguir tus sueños",
-            "Guardia Civil, Bombero, Agente Forestal"];
-            let anuncio3 = ["Reserva de vuelos, apartamentos, hoteles...", 
-            "Descargate la app Booking y consigue todo esto desde el mismo lugar",
-            "App disponible para IOS y Android",
-            "Encuentra ofertas y precios inmejorables",
-            "Reserva con toda la antelación que desees"];
-            let anuncio4 = ["Ambientadores de converse", 
-            "Ambientador de una zapatilla chiquitilla",
-            "Diferentes olores y sensaciones",
-            "Es la oportunidad de que tu coche huela bien",
-            "De todos los colores, próximamente más zapatillas"];
-
-            let rand = Math.floor(Math.random()*4)+1;
-
-            publi.innerHTML = ('anuncio'+rand);
             
-            setTimeout("cambiarPubli",2000);
+            
+            publi.innerHTML = (`${anuncio1[contador]}`);
+            contador++;
+
+            if (contador == anuncio1.length){
+                contador = 0;
+            }
+            
+            setTimeout("cambiarPubli()",1000);
 
         }
 

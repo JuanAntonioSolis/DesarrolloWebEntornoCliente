@@ -19,15 +19,17 @@
 
     <script>
 
+        let contador = 1;
+
         function cambiarBanner() {
-            let rand = Math.floor(Math.random() * 6) + 1;
             let foto = document.getElementById("banner");
-
-            foto.src = './imagenes/dado0' + rand + '.png';
+            contador++;
+            foto.src = './imagenes/dado0' + contador + '.png';
             
-        
-
             setTimeout("cambiarBanner()", 1000);
+            if (contador == 6){
+                contador = 0;
+            }
         }
 
     </script>

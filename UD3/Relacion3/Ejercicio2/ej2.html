@@ -41,11 +41,11 @@
 
 <body>
     <div id="container">
-        <div id="red" onMouseOver="cambiarFondo('red')"></div>
-        <div id="green" onMouseOver="cambiarFondo('green')"></div>
-        <div id="yellow" onMouseOver="cambiarFondo('yellow')"></div>
-        <div id="blue" onMouseOver="cambiarFondo('blue')"></div>
-        <div id="black" onMouseOver="cambiarFondo('black')"></div>
+        <div id="red" onMouseOver="cambiarFondo('red')" onmouseout="colorOriginal()"></div>
+        <div id="green" onMouseOver="cambiarFondo('green')"  onmouseout="colorOriginal()"></div>
+        <div id="yellow" onMouseOver="cambiarFondo('yellow')"  onmouseout="colorOriginal()"></div>
+        <div id="blue" onMouseOver="cambiarFondo('blue')"  onmouseout="colorOriginal()"></div>
+        <div id="black" onMouseOver="cambiarFondo('black')"  onmouseout="colorOriginal()"></div>
     </div>
 
     <script>
@@ -53,6 +53,11 @@
             
             document.body.style.backgroundColor = color;
 
+        }
+
+        function colorOriginal() {
+            document.body.style.backgroundColor = "white";
+            //document.bgColor = "white";
         }
     </script>
 

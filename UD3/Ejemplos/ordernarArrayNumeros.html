@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenar Array Números</title>
+</head>
+
+<body>
+    <h1>Ordenar un array de números</h1>
+
+    <p id="listadesordenada"></p>
+    <br>
+    <p id="listaordenada1"></p>
+    <br>
+    <p id="listaordenada2"></p> 
+
+
+    <script>
+
+        let listaNums = [2, 5, 1, 6, 8, 2, 4, 5, -1, 100, 10, 15, 19, 13];
+
+        function mayorMenor(a,b){
+            return b-a;
+        }
+
+        function menorMayor(a,b){
+            return a-b;
+        }
+        
+        document.getElementById("listadesordenada").innerHTML = `${listaNums}`;
+        document.getElementById("listaordenada1").innerHTML = `${listaNums.sort(menorMayor)}`;
+        document.getElementById("listaordenada2").innerHTML = `${listaNums.sort(mayorMenor)}`;
+        
+        
+
+
+    </script>
+
+</body>
+
+</html>
