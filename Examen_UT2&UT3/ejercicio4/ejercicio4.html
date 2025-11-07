@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio4ExamenUD2&UD3</title>
+
+    <style>
+        #container{
+            margin: 0 auto;
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #combi{
+            display: inline;
+        }
+
+        #caja{
+            width: 400px;
+            height: 250px;
+            background-color: antiquewhite;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #caja input{
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgb(127, 250, 127);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Generador de Primitiva</h1>
+
+        <div id="caja">
+            <input type="button" value="Generar combinación" onclick="generarPrimitiva()">
+
+            <p id="combi">- - - - - -</p>
+
+            <p>Número complementario: <span id="compl">--</span></p>
+
+            <p id="fecha"></p>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function generarPrimitiva(){
+            let combinacion = [];
+            let combi = document.getElementById("combi");
+            let comple = document.getElementById("compl");
+            let box = document.getElementById("fecha");
+            let hoy = new Date();
+            let dia = hoy.getUTCDay();
+            let mes = hoy.getMonth();
+            let year = hoy.getFullYear();
+            let fechaFinal = `${dia}/${mes}/${year}`;
+            let hora = hoy.getHours();
+            let mins = hoy.getMinutes();
+            let secs = hoy.getSeconds();
+            let horaFinal = `${hora}:${mins}:${secs}`;
+            
+
+            while (combinacion.length < 7){
+                let num = Math.floor(Math.random()*49)+1;
+                if (!combinacion.includes(num)){
+                    combinacion.push(num);
+                    
+                }
+                
+            }
+
+            let complementario = combinacion.pop();
+
+            comple.innerHTML = complementario;
+
+            combi.innerHTML = combinacion.join(" - ");
+
+            box.innerHTML = `Fecha: ${fechaFinal} | Hora: ${horaFinal}`;
+            console.log(hoy.getDay());
+
+        }
+        
+    </script>
+    
+</body>
+</html>
