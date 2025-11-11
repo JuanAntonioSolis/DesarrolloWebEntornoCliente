@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej3Arrays</title>
+</head>
+
+<body>
+
+
+    <script>
+        let alumnos = [
+            ["Lucía", "DWEC", 8.5],
+            ["Pedro", "DAW", 6.9],
+            ["Marcos", "DIW", 9.2],
+            ["Sofía", "EIE", 7.4]
+        ];
+
+        //Datos en formato texto
+        for (let i = 0; i < alumnos.length; i++) {
+            document.write(` ${alumnos[i][0]} cursa ${alumnos[i][1]} y ha sacado un ${alumnos[i][2]} <br>`);
+        }
+
+        function tabla() {
+            let suma = 0;
+
+            document.write("<table border='1'>");
+            document.write("<tr> <th>Alumno</th> <th>Curso</th> <th>Nota</th> </tr>");
+            for (let i = 0; i < alumnos.length; i++) {
+                document.write("<tr>");
+                for (let j = 0; j < alumnos[i].length; j++) {
+                    document.write(`<td>${alumnos[i][j]} </td>`);
+
+                }
+                document.write("</tr>");
+
+                suma += alumnos[i][2];
+
+            }
+            let media = suma / alumnos.length;
+            document.write(`<td colspan=2> Nota media</td>`);
+            document.write(`<td> ${media}</td>`);
+            document.write("</table>");
+
+        }
+
+        tabla();
+
+    </script>
+
+</body>
+
+</html>

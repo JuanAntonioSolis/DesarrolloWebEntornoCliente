@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej1Arrays</title>
+</head>
+
+<body>
+
+
+    <script>
+        let alumnos = ["Lucía", "Pedro", "Marcos", "Sofía"];
+        let modulos = ["DWEC", "DAW", "DIW", "EIE"];
+        let notas = [8.5, 6.9, 9.2, 7.4];
+
+        for (let i = 0; i < alumnos.length; i++) {
+            document.write(`${alumnos[i]} cursa ${modulos[i]} y ha sacado un ${notas[i]} <br>`);
+        }
+
+        function mostrarDatos(indice) {
+
+
+            document.write(`${alumnos[indice]} cursa ${modulos[indice]} y ha sacado un ${notas[indice]} <br>`);
+        }
+
+        function buscarAlumno(nombre) {
+            let posicion = alumnos.indexOf(nombre);
+
+            if (posicion > alumnos.length - 1) {
+                document.write("El alumno no existe");
+            } else {
+                document.write(`El alumno ${alumnos[posicion]} cursa ${modulos[posicion]} y ha sacado un ${notas[posicion]} <br>`);
+            }
+        }
+
+
+        let indice = parseInt(prompt("Escribe un índice"));
+        mostrarDatos(indice);
+
+        let name = prompt("Escribe un nombre de alumno:");
+        buscarAlumno(name);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej2Arrays</title>
+</head>
+
+<body>
+
+    <script>
+        let productos = ["Teclado", "Ratón", "Monitor", "Impresora"];
+        let precios = [25, 15, 150, 90];
+        let stock = [10, 20, 5, 8];
+
+        function tabla() {
+            let totalInventario = 0;
+            let total = 0;
+
+            document.write("<table border='1'>");
+            document.write("<tr> <th>Producto</th> <th>Precio</th> <th>Stock</th> <th>Total</th> </tr>");
+            for (let i = 0; i < productos.length; i++) {
+                document.write("<tr>");
+                document.write(`<td> ${productos[i]} </td>`);
+                document.write(`<td> ${precios[i]} </td>`);
+                document.write(`<td> ${stock[i]} </td>`);
+
+                total += precios[i] * stock[i];
+                totalInventario += total;
+
+                document.write(`<td> ${total} </td>`);
+                document.write("</tr>");
+            }
+            document.write("<tr>");
+            document.write(`<td colspan=3> Total inventario </td>`);
+            document.write(`<td> ${totalInventario}</td>`);
+            
+            document.write("</tr>");
+            document.write("</table>");
+        }
+
+
+        function productoMasCaro() {
+            let caro = 0;
+            for(let i = 0; i< productos.length;i++){
+                if(precios[i] > caro){
+                    caro = precios[i];
+                }
+            }
+
+            let posMayor = precios.indexOf(caro);
+
+            document.write(`El producto más caro es ${productos[posMayor]} con un precio de: ${precios[posMayor]} €`);
+        }
+
+        tabla();
+        productoMasCaro();
+
+    </script>
+
+</body>
+
+</html>
