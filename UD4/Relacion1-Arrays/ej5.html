@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej4Arrays</title>
+</head>
+
+<body>
+
+    <script>
+        let notas = [
+            [7.5, 8.0, 6.5],
+            [5.0, 6.0, 7.0],
+            [9.0, 9.5, 9.0]
+        ];
+
+        function mediaAlumno() {
+            let suma = 0;
+
+            document.write("<table border='1'>");
+            document.write("<tr> <th>Alumno</th> <th>Nota media</th> </tr>");
+            for (let i = 0; i < notas.length; i++) {
+                document.write("<tr>");
+
+                for (let j = 0; j < notas.length; j++) {
+                    suma += notas[i][j];
+
+                }
+                let media = suma / notas.length;
+                //document.write(`La media del alumno ${i} es ${media} <br>`);
+                document.write(`<td> ${i + 1} </td>`);
+                document.write(`<td> ${media} </td>`);
+
+                document.write("</tr>");
+                
+                suma = 0;
+            }
+        }
+
+        function mediaEvaluacion() {
+            let suma = 0;
+
+            document.write("<table border='1'>");
+            document.write("<tr> <th>Trimestre</th> <th>Nota media</th> </tr>");
+            for (let i = 0; i < notas.length; i++) {
+                document.write("<tr>");
+                for (let j = 0; j < notas.length; j++) {
+                    suma += notas[j][i];
+
+                }
+                let media = suma / notas.length;
+                //document.write(`La media del trimestre ${i} es ${media} <br>`);
+                document.write(`<td> ${i + 1} </td>`);
+                document.write(`<td> ${media} </td>`);
+
+                document.write("</tr>");
+
+                suma = 0;
+            }
+
+
+        }
+
+        mediaAlumno();
+        document.write("<br>");
+        mediaEvaluacion();
+
+    </script>
+
+</body>
+
+</html>

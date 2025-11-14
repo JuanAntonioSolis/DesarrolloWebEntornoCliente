@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica1-ArraysMultidimensionales</title>
+</head>
+
+<body>
+
+
+    <script>
+        let poblaciones = ['Localidad', 'Enero', 'Febrero', 'Marzo', 'Abril'];
+        let temperatura = [
+            ['Cuevas del Almanzora', 12, 13, 15, 18],
+            ['Granada', 4.5, 8, 9, 15],
+            ['Madrid', 4, 5.8, 8, 13],
+            ['Soria', 0, 1, 6, 10]
+        ];
+
+        document.write("<h2> Tabla de temperaturas </h2>");
+        document.write("<table border='1'>");
+        document.write(`<tr>`);
+        for (let i = 0; i < poblaciones.length; i++) {
+            document.write(`<th> ${poblaciones[i]}</th>`);
+
+
+        }
+        document.write(`<th> Media</th>`);
+        document.write(`</tr>`);
+
+        function calcularMedia() {
+            let mediaTemp = 0;
+            let aux = 0;
+            for (let i = 0; i < temperatura.length; i++) {
+                for (let j = 1; j < temperatura[i].length; j++) {
+                    aux += temperatura[i][j];
+                }
+            }
+            mediaTemp = aux / temperatura.length;
+
+            return(mediaTemp);
+        }
+
+
+        for (let i = 0; i < temperatura.length; i++) {
+            document.write(`<tr>`);
+            for (let j = 0; j < temperatura[i].length; j++) {
+                document.write(`<td> ${temperatura[i][j]} </td>`);
+
+
+            }
+
+
+            document.write(`<td> ${calcularMedia()} </td>`);
+            document.write(`</tr>`);
+        }
+
+
+
+        document.write(`</table>`);
+
+        let tempAlta = 0;
+        let poblacion = "";
+        for (let i = 0; i < temperatura.length; i++) {
+            if (temperatura[i][3] > tempAlta) {
+                tempAlta = temperatura[i][3];
+                poblacion = temperatura[i][0];
+            }
+        }
+
+        document.write(`La temperatura más alta en Marzo ha sido ${tempAlta}º, 
+        y corresponde a la población: ${poblacion} <br>`);
+
+
+        let mediaTempAbril = 0;
+        let suma = 0;
+        for (let i = 0; i < temperatura.length; i++) {
+            suma += temperatura[i][temperatura.length];
+
+        }
+
+        mediaTempAbril = suma / temperatura.length;
+        document.write(`La media de Temperatura en el mes de Abril ha sido: ${mediaTempAbril}`);
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej4Arrays</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        let agenda = [
+            ["Juan", "juan@gmail.com", "612345678"],
+            ["Marta", "marta@yahoo.es", "678901234"],
+            ["Luis", "luis@empresa.com", "699998877"]
+        ];
+
+        function tabla() {
+            document.write("<table border='1'>");
+            document.write("<tr> <th>Nombre</th> <th>Email</th> <th>Teléfono</th> </tr>");
+            for (let i = 0; i < agenda.length; i++) {
+                document.write("<tr>");
+                for (let j = 0; j < agenda[i].length; j++) {
+                    document.write(`<td>${agenda[i][j]} </td>`);
+
+                }
+                document.write("</tr>");
+
+                
+
+            }
+            
+            document.write("</table>");
+        }
+
+        function buscarCorreo(nombre){
+            for(let i = 0; i < agenda.length; i++){
+                if(nombre == agenda[i][0]){
+                    document.write(`El correo de ${nombre} es ${agenda[i][1]}`);
+                } 
+                
+                
+            }
+            
+        }
+
+        function addContacto(){
+            let nombre = prompt("Escribe el nombre");
+            let correo = prompt("Escribe el correo");
+            let telefono = prompt("Escribe el teléfono");
+            let contacto = [nombre, correo, telefono];
+
+            agenda.push(contacto);
+        }
+
+        
+        addContacto();
+        tabla();
+        buscarCorreo("Juan");
+        
+
+    </script>
+
+</body>
+
+</html>
