@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=ç, initial-scale=1.0">
+    <title>Ejercicio2Objetos</title>
+</head>
+
+<body>
+
+    <script>
+        let discos = [];
+
+        class cd_musica {
+            constructor(titulo, grupo, fecha) {
+                this.titulo = titulo;
+                this.grupo = grupo;
+                this.fecha = fecha;
+            }
+
+            imprimedatos() {
+                return `El disco: "${this.titulo}" del grupo ${this.grupo} salió en: ${this.fecha}`;
+            }
+        }
+
+        function pedirDatos() {
+            do {
+                let tittle = prompt("Escribe el título del disco:");
+                let grupo = prompt("Escribe el autor del disco:");
+                let fecha = prompt("Escribe la fecha de salida:");
+
+                let cd = new cd_musica(tittle, grupo, fecha);
+                discos.push(cd);
+            } while (discos.length < 3);
+
+            for (let i= 0; i<discos.length; i++){
+                document.write(`${discos[i].imprimedatos()} <br>`);
+            }
+
+        }
+
+        pedirDatos();
+    </script>
+
+</body>
+
+</html>

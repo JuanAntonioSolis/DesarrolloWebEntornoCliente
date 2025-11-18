@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1Objetos</title>
+</head>
+<body>
+
+
+    <script>
+        class producto_alimenticio{
+            constructor(codigo,nombre,precio){
+                this.codigo = codigo;
+                this.nombre = nombre;
+                this.precio = precio;
+            }
+
+            imprimedatos(){
+                return `Producto con código: ${this.codigo} - Nombre: ${this.nombre} - Precio Unitario: ${this.precio}`;
+            }
+        }
+
+        let prod1 = new producto_alimenticio("01","Leche",0.90);
+        let prod2 = new producto_alimenticio("02","Galletas",2.5);
+        let prod3 = new producto_alimenticio("03","Café",1.25);
+
+        let productos = [prod1,prod2,prod3];
+
+        for (let i = 0; i<productos.length;i++){
+            document.write(`${productos[i].imprimedatos()} <br>`);
+        }
+        
+    </script>
+    
+</body>
+</html>

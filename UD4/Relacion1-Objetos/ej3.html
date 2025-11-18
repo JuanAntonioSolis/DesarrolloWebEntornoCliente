@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio3Objetos</title>
+</head>
+
+<body>
+
+    <script>
+
+        let pisos = [];
+
+        class piso {
+            constructor(metrosCuadrados, altura, numHabitaciones, precio) {
+                this.metrosCuadrados = metrosCuadrados;
+                this.altura = altura;
+                this.numHabitaciones = numHabitaciones;
+                this.precio = precio;
+            }
+
+            imprimeDatos() {
+                return `${this.metrosCuadrados} metros cuadrados, altura ${this.altura},  
+                ${this.numHabitaciones} habitaciones en ${this.precio}€.`;
+            }
+
+            calcularIva(cant) {
+                this.precio = this.precio * (cant / 100 + 1);
+                return ` <br> El precio final con IVA es: ${this.precio}€`;
+            }
+        }
+
+        function pedirDatos() {
+
+            let metrosCuadrados = prompt("Introduce los metros cuadrados:");
+            let altura = prompt("Escribe la altura del piso:");
+            let numHabitaciones = prompt("Escribe el número de habitaciones:");
+            let precio = prompt("Escribe el precio del piso:");
+            let iva = prompt("Escribe el IVA que se aplica al precio:");
+
+
+            let flat = new piso(metrosCuadrados, altura, numHabitaciones, precio);
+            pisos.push(flat);
+            let seguir = prompt("¿Quieres seguir introduciendo datos? <br> S/N");
+
+
+            for (let x in pisos) {
+                document.write(pisos[x].imprimeDatos());
+                document.write(pisos[x].calcularIva(iva));
+            }
+
+        }
+
+        pedirDatos();
+    </script>
+
+</body>
+
+</html>

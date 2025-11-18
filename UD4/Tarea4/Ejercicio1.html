@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1Tarea4</title>
+</head>
+<body>
+
+    <script>
+
+        let primos = [];
+        let cont = 2;
+        
+        function esPrimo(num){
+            if (num < 2){
+                return false;
+            }
+
+            for (let i = 2; i <= num / 2; i++){
+                if(num % i == 0){
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        
+        while (primos.length < 15){
+            if(esPrimo(cont)){
+                primos.unshift(cont);
+            }
+            cont++;
+        }
+
+        function invertirArray(lista){
+            return lista.reverse();
+        }
+
+        function visualizarArray(arrayVisualizar){
+            document.write(arrayVisualizar);
+        }
+
+        visualizarArray(primos);
+
+        
+        let nuevoArrayInvertido = invertirArray(primos);
+        document.write("<br>");
+        visualizarArray(nuevoArrayInvertido);
+        
+
+    </script>
+    
+</body>
+</html>
