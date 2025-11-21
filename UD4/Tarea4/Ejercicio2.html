@@ -1,19 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio1Tarea4</title>
+    <title>Ejercicio2Tarea4</title>
 </head>
+
 <body>
 
     <script>
-        class Identidad{
-            generarLetra(dni){
-                
+        class Identidad {
+            constructor() { }
+
+            generarLetra(dni) {
+                let letra = "";
+                let letras = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
+
+                let index = dni % 23;
+                letra = letras[index];
+
+                dni = dni.toString() + letra;
+
+                return dni;
+
+            }
+
+            comprobarDni(dni) {
+
+                return /^(\d{8})([A-HJ-NP-TV-Z])$/.test(dni) && ("TRWAGMYFPDXBNJZSQVHLCKE"[(RegExp.$1 % 23)] == RegExp.$2);
             }
         }
+
+        let dni = new Identidad();
+        let dniCompleto = dni.generarLetra(54118457);
+
+        document.write(dniCompleto);
+        console.log(dni.comprobarDni(dniCompleto));
+
+
+
+
     </script>
-    
+
 </body>
+
 </html>

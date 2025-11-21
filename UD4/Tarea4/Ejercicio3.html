@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio3Tarea4</title>
+</head>
+
+<body>
+
+    <script>
+
+        function comprobarDni(dni) {
+
+            return /^(\d{8})([A-HJ-NP-TV-Z])$/.test(dni) && ("TRWAGMYFPDXBNJZSQVHLCKE"[(RegExp.$1 % 23)] == RegExp.$2);
+        }
+
+
+        class Diputado {
+            constructor(nombre, apellidos, dni, edad, partido) {
+                this.nombre = nombre;
+                this.apellidos = apellidos;
+                if (comprobarDni(dni)){
+                    this.dni = dni;
+                } else{
+                    alert("El DNI introducido no es correcto");
+                }
+                if (edad > 0 && edad < 200){
+                    this.edad = edad;
+                } else{
+                    alert("La edad debe ser mayor que 0 y menor que 200");
+                }
+                this.partido = partido;
+            }
+
+            getNombre(){
+                return this.nombre;
+            }
+
+            setNombre(nuevoNombre){
+                this.nombre = nuevoNombre;
+            }
+
+            getApellidos(){
+                return this.apellidos;
+            }
+
+            setApellidos(nuevosApellidos){
+                this.apellidos = nuevosApellidos;
+            }
+
+            getDni(){
+                return this.dni;
+            }
+
+            setDni(nuevoDNI){
+                if (comprobarDni(nuevoDNI)){
+                    this.dni = nuevoDNI;
+                    return true;
+                } else{
+                    return false;
+                }
+            }
+
+            getEdad(){
+                return this.edad;
+            }
+
+            setEdad(nuevaEdad){
+                this.edad = nuevaEdad;
+            }
+
+            getPartido(){
+                return this.partido;
+            }
+
+            setPartido(nuevoPartido){
+                this.partido = nuevoPartido;
+            }
+
+            toString(){
+                return `${this.nombre} ${this.apellidos}, con DNI: ${this.dni}. Edad: ${this.edad}. Partido Político: ${this.partido}`;
+            }
+        }
+
+        let dip1 = new Diputado("Herminio","Cabezas","54118457D",30,"Verde");
+        let dip2 = new Diputado("Manolo","López","20530545D",20,"Azul");
+        let dip3 = new Diputado("Jacobo","Sánchez","54118458X",53,"Amarillo");
+
+        let diputados = [];
+        
+        diputados.push(dip1);
+        diputados.push(dip2);
+        diputados.push(dip3);
+
+        diputados.sort((a,b) => a.getEdad() - b.getEdad());
+
+        for (let x in diputados){
+            document.write(`${diputados[x]} <br>`);
+        }
+        
+
+        
+    </script>
+
+</body>
+
+</html>
