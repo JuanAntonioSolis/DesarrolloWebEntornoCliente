@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2_ExamenUT4</title>
+</head>
+
+<body>
+
+    <script>
+        class Vehiculo {
+            constructor(marca, modelo, yearFabricacion, matricula, kilometros, tipoCombustible, precio) {
+                this.marca = marca;
+                this.modelo = modelo;
+                this.yearFabricacion = yearFabricacion;
+                this.matricula = matricula;
+                this.kilometros = kilometros;
+                this.tipoCombustible = tipoCombustible;
+                this.precio = precio;
+            }
+
+            mostrarInformacion() {
+                return `${this.marca} ${this.modelo} <br>
+                        Año Fabricación: ${this.yearFabricacion} <br>
+                        Matrícula: ${this.matricula} <br>
+                        Kilómetros: ${this.kilometros} <br>
+                        Combustible: ${this.tipoCombustible} <br>
+                        Precio: ${this.precio} €`;
+            }
+
+            actualizarKilometros(nuevosKm) {
+                if (nuevosKm > this.kilometros) {
+                    this.kilometros = nuevosKm;
+                    return ("Kilómetros actualizados correctamente!");
+                } else {
+                    return ("El kilometraje sólo debe aumentar, no se puede establecer un kilometraje igual o inferior.");
+                }
+            }
+
+            calcularAntiguedad() {
+                return `La antiguedad del vehículo es de ${2025 - this.yearFabricacion} años.`;
+            }
+
+
+        }
+
+
+        let marca = prompt("Introduce la marca del vehículo:");
+        let modelo = prompt("Introduce el modelo del coche:");
+
+        let yearFabricacion = parseInt(prompt("Escribe el año de fabricación"));
+        if (isNaN(yearFabricacion)) {
+            yearFabricacion = parseInt(prompt("Debes escribir un número de año:"));
+        }
+
+        let matricula = prompt("Introduce la matrícula:");
+        let kms = parseInt(prompt("Escribe el kilometraje del vehículo:"));
+        let comb = prompt("Escribe el tipo de energía(Gasolina,Diesel,Eléctrico,Híbrido)");
+        let precio = parseFloat(prompt("Introduce el valor económico del coche:"));
+
+        let car1 = new Vehiculo(marca, modelo, yearFabricacion, matricula, kms, comb, precio);
+
+        document.write(car1.mostrarInformacion());
+
+        document.write("<br>");
+        document.write(car1.calcularAntiguedad());
+        document.write("<br>");
+
+        
+
+        function cambiarKms() {
+            let kmsAct = parseInt(prompt("Introduce los kilómetros actualizados:"));
+
+            document.write(car1.mostrarInformacion());
+            document.write("<br>");
+            document.write("<br>");
+            document.write(car1.actualizarKilometros(kmsAct));
+            document.write("<br>");
+            document.write("<br>");
+            document.write("<strong>Información actualizada: </strong>");
+            document.write("<br>");
+            document.write(car1.mostrarInformacion());
+            
+        }
+        
+        document.write("<br>");
+        document.write(`<button onClick="cambiarKms()">Actualizar kilómetros</button>`);
+
+
+        
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

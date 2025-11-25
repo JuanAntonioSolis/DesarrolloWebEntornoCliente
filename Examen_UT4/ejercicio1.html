@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1_ExamenUT4</title>
+    <style>
+        table tr {
+            border: 1px solid black;
+            text-align: center;
+            
+        }
+
+        th{
+            background-color: rgb(0, 0, 54);
+            color: white;
+            padding: 15px;
+        }
+
+        table td {
+            border: 1px solid rgb(133, 133, 133);
+            padding: 15px;
+            text-align: center;
+            background-color: rgb(214, 214, 214);
+            
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(0, 0, 54);
+        }
+        span{
+            font-weight: bold;
+        }
+
+       
+    </style>
+</head>
+
+<body>
+
+    <h1>Ejercicio 1 - Gestión de inventario</h1>
+
+    <p id="mv"></p>
+    <p id="pm"></p>
+    <p id="ms"></p>
+
+
+    <script>
+
+        let productos = ['Producto', 'Precio', 'Stock', 'Descuento', 'IVA'];
+        let inventario = [
+            ['Portátil', 899.99, 15, 10, 21],
+            ['Ratón', 25.50, 120, 5, 21],
+            ['Teclado', 75.00, 45, 15, 21],
+            ['Monitor', 249.99, 8, 20, 21],
+            ['Webcam', 89.90, 35, 0, 21]
+        ];
+        let precioFinal = 0;
+        let valorTotal = 0;
+        let productoCaro = "";
+        let mayorValor = 0;
+        let aux = 0;
+        let productoMenorStock = "";
+        let menorStock = 10000;
+
+        inventario.push(['USB', 12.99, 200, 8, 21]);
+        productos.push('Precio Final');
+        productos.push('Valor Total');
+
+
+        document.write("<table>");
+        document.write("<tr>");
+        for (let i = 0; i < productos.length; i++) {
+            document.write(`<th> ${productos[i]} </th>`);
+        }
+
+
+
+        for (let i = 0; i < inventario.length; i++) {
+            document.write("<tr>");
+            for (let j = 0; j < inventario.length - 1; j++) {
+
+                precioFinal = inventario[i][1] + (inventario[i][1] * (inventario[i][4] / 100));
+                precioFinal -= precioFinal * (inventario[i][3] / 100);
+                valorTotal = precioFinal * inventario[i][2];
+                inventario[i][5] = precioFinal;
+                inventario[i][6] = valorTotal;
+
+                document.write(`<td> ${inventario[i][j]} </td>`);
+            }
+            aux += inventario[i][1];
+
+            document.write(`<td> ${precioFinal} €</td>`);
+            document.write(`<td> ${valorTotal} €</td>`);
+
+
+            if (inventario[i][6] > mayorValor) {
+                mayorValor = inventario[i][6];
+                productoCaro = inventario[i][0];
+            }
+
+
+
+        }
+
+        for (let i = 0; i < inventario.length - 1; i++) {
+            if (inventario[i][2] < menorStock) {
+                menorStock = inventario[i][2];
+                productoMenorStock = inventario[i][0];
+            }
+        }
+
+        let media = aux / inventario.length;
+
+        document.write("</tr>");
+        document.write("</table>");
+
+        document.getElementById("mv").innerHTML = `<span>Producto con mayor valor:</span> ${productoCaro} --> ${mayorValor} €`;
+        document.getElementById("pm").innerHTML = `<span>Precio medio:</span> ${media} €`;
+        document.getElementById("ms").innerHTML = `<span>Menor stock (5 iniciales):</span> ${productoMenorStock} --> ${menorStock}`;
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
