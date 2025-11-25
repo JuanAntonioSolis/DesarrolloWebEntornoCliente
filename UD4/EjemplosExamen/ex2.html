@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise2</title>
+</head>
+<body>
+
+    <script>
+
+        /*
+        Crear un modelo de objetos llamado cuentaBancaria que contenga las siguientes
+        propiedades: nombre de titular, apellidos de titular, Dirección, Código Postal,
+        Localidad, Provincia, y saldo,
+        también se deben crear dos métodos: 
+        uno que muestre la información por pantalla y 
+        otro que permita modificar el saldo de la cuenta. 
+        
+        Hacer un programa que permita crear un objeto de este tipo, solicitando todos los datos de
+        la cuenta bancaria por teclado. Finalmente se debe mostrar esa información por
+        pantalla.
+        */
+
+        class cuentaBancaria{
+            constructor(nombre, apellidos, direccion, cp, localidad, provincia){
+                this.nombre = nombre;
+                this.apellidos = apellidos;
+                this.direccion = direccion;
+                this.cp = cp;
+                this.localidad = localidad;
+                this.provincia = provincia;
+                this.saldo = 0;
+            }
+
+            mostrarInfo(){
+                return `Titular: ${this.nombre}, ${this.apellidos}.<br>
+                        Dirección: ${this.direccion}, ${this.cp}. Localidad ${this.localidad}, ${this.provincia}. <br>
+                        Saldo: ${this.saldo}`;
+            }
+
+            modificarSaldo(){
+                let num = prompt("Escribe 1 para ingresar dinero, 2 para retirar:");
+                if (num == 1){
+                    let cant = parseInt(prompt("Escribe la cantidad a ingresar"));
+                    this.saldo+=cant;
+                } else if(this.saldo > 0){
+                    cant = parseInt(prompt("Escribe la cantidad a retirar"));
+                    this.saldo-=cant;
+                }
+            }
+        }
+
+        let name = prompt("Escribe tu nombre");
+        let surname = prompt("Escribe tus apellidos");
+        let address = prompt("Escribe tu dirección");
+        let postalCode = prompt("Introduce tu código postal");
+        let city = prompt("Escribe tu localidad");
+        let province = prompt("Introduce la provincia");
+
+
+        let cuanta1 = new cuentaBancaria(name, surname, address,postalCode, city, province);
+
+        
+
+        cuanta1.modificarSaldo();
+        document.write(cuanta1.mostrarInfo());
+
+
+    </script>
+    
+</body>
+</html>

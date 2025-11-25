@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise1</title>
+    <style>
+        table tr th {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+
+        table tr td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+
+        /*
+        Dado los siguientes arrays:
+        Alumnos = ['Alumno', 'Cliente', 'Servidor', 'Diseño', 'Despliegue']
+        Notas= [[´Juan’, 5, 6, 7.3, 8],['María', 4,5, 5.8, 9],['Pablo', 10, 9.8, 8, 7], ['Sonia', 3.6,
+        5,7,6], [´Carlos’, 8, 3.7, 7.3, 9]]
+
+        Se pide:
+        ● Calcular la Nota media por cada Alumno.
+        ● Calcula la nota más alta en Cliente y a que Alumno corresponde.
+        ● Calcula la nota media en el módulo de servidor.
+        ● Mostrar el alumno con peor nota media.
+        ● Añade el alumno ['Jaime', 4, 6.7, 5.8,7]
+        */
+
+        let alumnos = ['Alumno', 'Cliente', 'Servidor', 'Diseño', 'Despliegue'];
+        let notas = [
+            ['Juan', 5, 6, 7.3, 8],
+            ['María', 4, 5, 5.8, 9],
+            ['Pablo', 10, 9.8, 8, 7],
+            ['Sonia', 3.6, 5, 7, 6],
+            ['Carlos', 8, 3.7, 7.3, 9]
+        ]
+
+        notas.push(['Jaime', 4, 6.7, 5.8, 7]);
+
+        //Cabecera
+        document.write("<table>");
+        document.write("<tr>");
+        for (let i = 0; i < alumnos.length; i++) {
+            document.write(` <th> ${alumnos[i]} </th>`);
+        }
+        document.write(`<th>  Media </th> </tr>`);
+        //-----------------------------------------------
+
+        let suma;
+        let medias = [];
+        let peor;
+        let alumno = "";
+        //Contenido tabla
+        for (let i = 0; i < notas.length; i++) {
+            suma = 0;
+            document.write("<tr>");
+            for (let j = 0; j < notas[i].length; j++) {
+                document.write(`<td> ${notas[i][j]} </td>`);
+
+                if (j != 0) {
+                    suma += notas[i][j];
+                }
+            }
+            medias[i] = suma / (notas[i].length - 1);
+            document.write(`<td> ${medias[i]} </td>`);
+
+            document.write("</tr>");
+
+            if (i == 0) {
+                peor = medias[i];
+                alumno = notas[i][0];
+            }
+
+            if (peor>medias[i]){
+                peor = medias[i];
+                alumno = notas[i][0];
+            }
+        }
+        document.write("</table>");
+
+
+
+        function calcularNotaAltaCliente() {
+            let notaAlta = 0;
+            let alumno = "";
+
+            for (let i = 0; i < notas.length; i++) {
+                if (notas[i][1] > notaAlta) {
+                    notaAlta = notas[i][1];
+                    alumno = notas[i][0];
+                }
+            }
+
+            document.write(`La nota más alta en Cliente ha sido: ${notaAlta} y corresponde a ${alumno}`);
+        }
+
+        function calcularNotaMediaServidor() {
+            let notaMediaServ = 0;
+            let aux = 0;
+            for (let i = 0; i < notas.length; i++) {
+                aux += notas[i][2];
+            }
+            notaMediaServ = aux / notas.length;
+
+            document.write(`La nota media en el módulo de servidor ha sido: ${notaMediaServ}`);
+        }
+
+
+        calcularNotaAltaCliente();
+        document.write("<br>");
+        calcularNotaMediaServidor();
+        document.write("<br>");
+        document.write(`La peor nota media corresponde al alumno: ${alumno}`);
+
+    </script>
+
+</body>
+
+</html>
