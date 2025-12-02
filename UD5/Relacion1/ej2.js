@@ -14,7 +14,7 @@ function deselecTodos(){
     
 
     for (let i = 0; i < checks.length; i++){
-        if (checks[i].checked =true){
+        if (checks[i].checked){
             checks[i].checked = false;
             document.getElementById("todos").checked = false;
         }
@@ -22,16 +22,20 @@ function deselecTodos(){
     }
 }
 
-let personas = ['pepe', 'lola', 'juan', 'lucas', 'lorena', 'asunta'];
+let personas = ['pepe', 'lola', 'juan', 'lucas', 'lorena', 'asunta', 'javier'];
 
 function leer(){
     const checks = document.getElementsByName("item");
+    let resultado = "";
+    
     for (let i = 0; i < checks.length; i++){
-        if (checks[i].checked =true){
-            document.getElementById("area").innerHTML = personas[checks[i].checked.value];
+        if (checks[i].checked){
+            resultado += `${personas[checks[i].value]} \n`;
         }
         console.log(checks[i].value)
     }
+
+    document.getElementById('area').value = resultado;
 
     
 }
