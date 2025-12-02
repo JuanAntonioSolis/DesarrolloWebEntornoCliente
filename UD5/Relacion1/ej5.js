@@ -68,8 +68,33 @@ function validarDni(){
     }
 }
 
+function validarTarjeta(){
+    const tarteja = document.getElementById('tarjeta');
+
+    if(tarjeta.selectedIndex == "" ){
+        tarjeta.focus();
+        alert("Debes elegir un tipo de tarjeta");
+        return false;
+    } else{
+        return true;
+    }
+}
+
+function validarCondiciones(){
+    const condiciones =  document.getElementById('condiciones');
+
+    if (condiciones.checked){
+        return true;
+    } else{
+        condiciones.focus();
+        alert("Debes aceptar las condiciones para continuar");
+        return false;
+    }
+}
+
+
 function validarAll(eDefecto){
-    if (validarApellidos() && validarNombre()  && validarPass() && validarEmail()&& validarDni() && confirm("¿Desea mandar el formulario?")){
+    if (validarApellidos() && validarNombre()  && validarPass() && validarEmail()&& validarDni() && validarTarjeta() && validarCondiciones() && confirm("¿Desea mandar el formulario?")){
         return true;
     } else{
         eDefecto.preventDefault();
