@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Pruebas</title>
+	<script>
+		function comprobarPassword(str)
+		{
+			//Utilizo el siguiente script para una contraseña mínima de 8 letras, con al menos un símbolo, letras mayúsculas y minúsculas y un número
+			var expresionRegular = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+			return expresionRegular.test(str);
+		}
+		function comprobarPassword2(str) {
+				errors = [];
+			if (str.length < 8) {
+				errors.push("Tu password debe tener al menos 8 caracteres.");
+			}
+			if (str.search(/[a-z]/i) < 0) {
+				errors.push("Tu password debe tener al menos una letra."); 
+			}
+			if (str.search(/[0-9]/) < 0) {
+				errors.push("Tu password debe tener al menos un digito.");
+			}
+			if (errors.length > 0) {
+				alert(errors.join("\n"));
+				return false;
+			}
+			return true;
+		}
+		password='pru2e222@22';
+		console.log('funcion 1: ' + comprobarPassword(password));
+		console.log('funcion 2: ' + comprobarPassword2(password));
+		
+		
+	</script>
+</head>
+<body>
+	Prueba de expresiones regulares
+</body>
+</html>
