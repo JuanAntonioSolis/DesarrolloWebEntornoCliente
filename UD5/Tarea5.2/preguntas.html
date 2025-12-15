@@ -5,49 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear preguntas</title>
+    <link rel="stylesheet" href="./main.css">
 </head>
 
 <body>
 
-    <h2>Travial</h2>
+    <div id="contPreguntas">
+        <h2>Travial</h2>
 
-    <form action="">
-        <fieldset>
-            <legend>Añada la pregunta</legend>
+        <form action="">
+            <fieldset>
+                <legend>Añada la pregunta</legend>
 
-            <label for="categoria">Pregunta de categoría:</label>
-            <select name="categoria" id="categoria">
-                <option value="geo">Geografía</option>
-                <option value="his">Historia</option>
-                <option value="espec">Espectáculos</option>
-                <option value="cien">Ciencia y Tecnología</option>
-                <option value="misc">Miscelánea</option>
-                <option value="cul">Cultura</option>
-            </select> <br> <br>
+                <label for="categoria">Pregunta de categoría:</label>
+                <select name="categoria" id="categoria">
+                    <option value="geo">Geografía</option>
+                    <option value="his">Historia</option>
+                    <option value="espec">Espectáculos</option>
+                    <option value="cien">Ciencia y Tecnología</option>
+                    <option value="misc">Miscelánea</option>
+                    <option value="cul">Cultura</option>
+                </select> 
 
-            <textarea name="assk" id="assk" cols="34"></textarea> <br> <br>
+                <textarea name="assk" id="assk" cols="34"></textarea> 
 
-            <label for="r1">Respuesta 1</label>
-            <input type="text" id="respuesta1" name="respuesta1">
-            <input type="radio" name="correcta" value="1"> <br> <br>
+                <div class="respuesta-grupo">
+                    <label for="respuesta1">Respuesta 1</label>
+                    <input type="text" id="respuesta1" name="respuesta1">
+                    <input type="radio" name="correcta" value="1">
+                </div>
 
-            <label for="r2">Respuesta 2</label>
-            <input type="text" id="respuesta2" name="respuesta2">
-            <input type="radio" name="correcta" value="2"> <br> <br>
+                <div class="respuesta-grupo">
+                    <label for="respuesta2">Respuesta 2</label>
+                    <input type="text" id="respuesta2" name="respuesta2">
+                    <input type="radio" name="correcta" value="2">
+                </div>
 
-            <label for="r3">Respuesta 3</label>
-            <input type="text" id="respuesta3" name="respuesta3">
-            <input type="radio" name="correcta" value="3"> <br> <br>
+                <div class="respuesta-grupo">
+                    <label for="respuesta3">Respuesta 3</label>
+                    <input type="text" id="respuesta3" name="respuesta3">
+                    <input type="radio" name="correcta" value="3">
+                </div>
 
-            <label for="r4">Respuesta 4</label>
-            <input type="text" id="respuesta4" name="respuesta4">
-            <input type="radio" name="correcta" value="4"> <br> <br>
+                <div class="respuesta-grupo">
+                    <label for="respuesta4">Respuesta 4</label>
+                    <input type="text" id="respuesta4" name="respuesta4">
+                    <input type="radio" name="correcta" value="4">
+                </div>
 
-            <input type="submit" name="enviar" id="enviar" value="Enviar">
-            <input type="reset" name="limpiar" id="button" value="Borrar">
-        </fieldset>
-    </form>
+                <input type="submit" name="enviar" id="enviar" value="Enviar">
+                <input type="reset" name="limpiar" id="button" value="Borrar">
+            </fieldset>
+        </form>
+    </div>
 
+
+    <script src="./preguntas.js"></script>
 </body>
 
 </html>
