@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen UT5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="container">
+
+        <h2>Examen UT5 - DWEC</h2>
+        <form>
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" id="name">
+
+            <label for="fechaNac">Fecha de nacimiento:</label>
+            <input type="text" name="fechaNac" id="fechaNac">
+
+            <label for="telf">Número de teléfono</label>
+            <input type="tel" name="telf" id="telf">
+
+            <label for="iban">Número de cuenta bancaria(IBAN)</label>
+            <input type="text" name="iban" id="iban">
+
+            <label for="pass">Contraseña:</label>
+			<input type="password" id="pass" name="pass">
+
+			<label for="passR">Confirmar contraseña:</label>
+			<input type="password" id="passR" name="passR">
+
+            <input type="button" value="Enviar" id="enviar">
+        </form>
+
+        <p>Número de intentos de envío del formulario: <span id="cont">0</span></p>
+    </div>
+    
+    <script src="./main.js"></script>
+</body>
+</html>
