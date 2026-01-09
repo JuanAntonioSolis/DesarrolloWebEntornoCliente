@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Lista 1</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        ul {
+            border: 2px dotted rgb(0, 102, 31);
+            padding: 25px;
+            list-style-type: circle;
+            border-radius: 10px;
+        }
+
+        input {
+            width: 120px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Lista</h1>
+
+    <ul id="lista">
+        <li>Muestra</li>
+    </ul>
+
+    <input type="button" value="Nuevo elemento" id="addButton">
+
+    <input type="button" value="Borrar primer li" id="deleteFirst">
+    <input type="button" value="Borrar ultimo li" id="deleteLast">
+
+
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

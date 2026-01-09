@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear varios elementos</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        ul {
+            border: 2px dotted rgb(0, 102, 31);
+            padding: 25px;
+            list-style-type: circle;
+            border-radius: 10px;
+        }
+
+        input{
+            width: 120px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <input type="button" value="Añadir elemento" id="boton">
+    <input type="button" value="Eliminar lista" id="boton1">
+    <input type="button" value="Eliminar último" id="boton2">
+    
+
+
+    <ul id="lista">
+
+    </ul>
+
+
+
+    <script src="./lista.js"></script>
+</body>
+
+</html>
