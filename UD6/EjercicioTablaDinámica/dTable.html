@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Dinámica</title>
+    <style>
+        td {
+            border: 1px solid black;
+            padding: 20px;
+            font-size: xx-large;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-bottom: 2em;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        table input {
+            font-size: x-large;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Tabla</h1>
+
+    <table id="tabla">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>
+                <input type="button" value="+" class="add">
+                <input type="button" value="-" class="del">
+            </td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>
+                <input type="button" value="+" class="add">
+                <input type="button" value="-" class="del">
+            </td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>
+                <input type="button" value="+" class="add">
+                <input type="button" value="-" class="del">
+            </td>
+        </tr>
+    </table>
+
+    <div>
+        <label for="c1">Celda 1</label>
+        <input type="text" id="c1">
+
+        <label for="c1">Celda 2</label>
+        <input type="text" id="c2">
+
+        <label for="c1">Celda 3</label>
+        <input type="text" id="c3">
+    </div>
+
+    <script src="./dTable.js"></script>
+</body>
+
+</html>
