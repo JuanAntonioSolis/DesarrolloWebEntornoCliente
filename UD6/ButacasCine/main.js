@@ -2,12 +2,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     crearSala();
 
-    butacasReservadas();
+  
 
 });
 
 function crearSala() {
     const sala = document.querySelector("#sala");
+
+    const ocupadas = [[5, 4], [5, 5], [5, 6], [7, 2], [7, 3], [9, 7], [9, 8], [10, 5], [10, 6], [10, 7], [11, 7], [13, 8]];
 
 
     for (let i = 0; i < 15; i++) {
@@ -38,16 +40,15 @@ function crearSala() {
                 butaca.classList.add("butaca", "nobutaca");
             }
 
+            for (let x = 0; x < ocupadas.length; x++) {
+                if (ocupadas[x][0] == i && ocupadas[x][1] == j){
+                    butaca.classList.add("butaca","ocupada");
+                }
+            }
+
         }
 
     }
 
 }
 
-function butacasReservadas() {
-    const ocupadas = [[5, 4], [5, 5], [5, 6], [7, 2], [7, 3], [9, 7], [9, 8], [10, 5], [10, 6], [10, 7], [11, 7], [13, 8]];
-
-    for (let i = 0; i < ocupadas.length; i++) {
-        console.log(ocupadas[i]);
-    }
-}
