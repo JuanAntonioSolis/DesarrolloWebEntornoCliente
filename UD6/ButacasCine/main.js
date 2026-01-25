@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     crearSala();
 
-  
+    reservarButaca();
 
 });
 
@@ -51,4 +51,47 @@ function crearSala() {
     }
 
 }
+
+function reservarButaca(){
+
+    const sala = document.querySelector("#sala");
+    const boton = document.querySelector("#reservar");
+    const texto = document.querySelector("#reservas");
+    const seleccionadas = [];
+    let reservaConfirmada = false;
+
+    sala.addEventListener("click",(e)=> {
+        const butaca = e.target.closest(".butaca");
+
+        if (reservaConfirmada) {
+            texto.textContent = "";
+            reservaConfirmada = false;
+        }
+
+        if (butaca && butaca.classList.contains("libre")){
+            butaca.classList.remove("libre");
+            butaca.classList.add("seleccion");
+            seleccionadas.push(butaca.id);
+        } /*else if (butaca && butaca.classList.contains("seleccion")){
+            butaca.classList.remove("seleccion");
+            butaca.classList.add("libre");
+            seleccionadas = seleccionadas.filter(b => b !== butaca.id);
+        }*/
+
+        boton.addEventListener("click",()=>{
+            texto.textContent = seleccionadas;
+            butaca.classList.remove("seleccion");
+            butaca.classList.add("ocupada");
+            seleccionadas = [];
+            reservaConfirmada = true;
+        });
+        
+        
+        
+    });
+
+    
+
+}
+
 

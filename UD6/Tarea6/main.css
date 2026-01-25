@@ -1,0 +1,39 @@
+body{
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+section{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    border: 1px solid black;
+}
+
+div{
+    border: 1px solid black;
+    text-align: center;
+    font-size: 2em;
+    
+    padding: 6px 16px;
+}
+
+button{
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-top: 2em;
+    transition: .3s ease all;
+
+    &:hover{
+        background-color: green;
+        color: white;
+    }
+}
+
+.red{
+    background-color: red;
+}
+
+.white{
+    background-color: white;
+}
