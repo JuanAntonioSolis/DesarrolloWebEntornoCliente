@@ -1,0 +1,18 @@
+body{
+    width: 50%;
+    margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+}
+
+div{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 16px;
+    margin: 0 auto;
+    align-content: center;
+    text-align: center;
+}
