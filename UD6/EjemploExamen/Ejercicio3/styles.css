@@ -17,3 +17,18 @@ p{
     padding: 6px 16px;
     border-radius: 10px;
 }
+
+#boton{
+    display: flex;
+}
+
+button{
+    margin: 0 auto;
+    padding: 6px 16px;
+    border-radius: 6px;
+    border: 2px solid cadetblue;
+    &:hover{
+        background-color: cadetblue;
+        color: white;
+    }
+}
