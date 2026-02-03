@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const teclas = document.querySelectorAll("div");
+    const teclas = document.querySelectorAll("button");
 
     teclas.forEach(tc => {
         tc.addEventListener("click", pulsar, false)
@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+let numero1 = null;
+let numero2 = false;
+let operacion = null;
 
 
 function pulsar(e) {
@@ -17,7 +20,7 @@ function pulsar(e) {
     if (e.target.closest("button")) {
         const elemento = e.target.closest("button");
 
-        switch(elemento.textContent){
+        switch (elemento.textContent) {
             case "0":
             case "1":
             case "2":
@@ -28,41 +31,84 @@ function pulsar(e) {
             case "7":
             case "8":
             case "9":
-                area.textContent = elemento.textContent;
+                if (numero2 || area.textContent === "0") {
+                    area.textContent = elemento.textContent;
+                    numero2 = false;
+                } else {
+                    area.textContent += elemento.textContent;
+                }
                 break;
+
             case "C":
-                area.textContent = "";
+                area.textContent = "0";
+                numero1 = null;
+                operacion = null;
+                numero2 = false;
+
+                break;
             case "+":
-                break;
             case "-":
-                break;
             case "X":
-                break;
             case "/":
+
+                numero1 = parseInt(area.textContent);
+                operacion = elemento.textContent;
+                numero2 = true;
+
                 break;
             case "=":
+                if (numero1 !== null && operacion !== null) {
+                    let num2 = parseInt(area.textContent);
+                    let resultado;
+
+                    switch (operacion) {
+                        case "+":
+                            resultado = suma(numero1, num2);
+                            break;
+                        case "-":
+                            resultado = resta(numero1, num2);
+                            break;
+                        case "X":
+                            resultado = multiplica(numero1, num2);
+                            break;
+                        case "/":
+                            resultado = divide(numero1, num2);
+                            break;
+                    }
+
+                    area.textContent = resultado;
+
+                    numero1 = null;
+                    operacion = null;
+                    numero2 = true;
+                }
+
                 break;
             default:
                 break;
-            
+
         }
 
     }
 
 }
 
-function suma() {
-
+function suma(n1, n2) {
+    return n1+n2;
 }
 
-function resta() {
-
+function resta(n1, n2) {
+    return n1 - n2;
 }
 
-function multiplica() {
-
+function multiplica(n1, n2) {
+    return n1 * n2;
 }
 
-function divide() {
+function divide(n1, n2) {
+    if (n2 === 0){
+        alert("No se puede dividir entre cero");
+    }
 
+    return n1 / n2;
 }

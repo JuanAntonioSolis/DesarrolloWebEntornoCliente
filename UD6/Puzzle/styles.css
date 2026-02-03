@@ -1,0 +1,63 @@
+div#tablero,
+div#solucion {
+    border: 5px solid black;
+    padding: 0px;
+    margin-left: 10%;
+    background-color: beige;
+    opacity: 0.8;
+    position: relative;
+    width: 400px;
+    float: left;
+}
+
+div#solucion {
+    background: url('./imgs/solucion.png');
+    min-height: 400px;
+}
+
+#container{
+    display: flex;
+    margin: 0 auto;
+}
+
+
+.clearfix {
+    overflow: hidden;
+}
+
+
+div.celda {
+    border: 0px solid #000;
+    width: 100px;
+    height: 100px;
+    float: left;
+    color: red;
+    text-align: center;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 10px auto;
+    text-align: center;
+}
+
+#boton{
+    text-align: center;
+    margin-top: 2em;
+}
+
+#cont{
+    padding: 12px 29px;
+    border-radius: 15px;
+    background-color: beige;
+    transition: .3s ease all;
+    font-weight: bold;
+    font-size: 1em;
+
+    &:hover{
+        background-color: rgb(160, 160, 140);
+        color: white;
+    }
+}
