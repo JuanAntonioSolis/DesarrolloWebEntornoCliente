@@ -1,10 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     colocarPiezas();
+    document.querySelector("#cont").addEventListener("click",contar,false);
 
 });
 
 let estado = [];
+let contando = false;
+let secs = 0;
+let intervalo;
 
 function colocarPiezas() {
     let tablero = document.querySelector("#tablero");
@@ -84,6 +88,38 @@ function moverPieza(e) {
         console.log(pos);
         console.log(posBlanca);
     }
+
+}
+
+function contar(){
+
+    let boton = document.querySelector("#cont");
+    let crono = document.querySelector("#time");
+    let mins = 0;
+    
+    if (!contando){
+        boton.textContent = "Detener Temporizador";
+        secs = 0;
+        intervalo = setInterval(() => {
+            secs++;
+            
+            if(secs == 60){
+                mins++;
+                secs = 0;
+            }
+
+            crono.textContent = mins + ":" + secs;
+        },1000);
+        contando = true;
+    } else{
+        boton.textContent = "Iniciar Temporizador";
+        clearInterval(intervalo); 
+        contando = false;
+    }
+
+    
+
+
 
 }
 
